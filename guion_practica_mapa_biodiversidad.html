@@ -1,0 +1,696 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; white-space: nowrap; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; border: none !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; background-repeat: initial initial; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-style: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background-color: rgba(255, 255, 0, 0.4); background-position: initial initial; background-repeat: initial initial; }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print { 
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>guion_practica_mapa_biodiversidad</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='instrucciones-para-realizar-la-práctica-denominada-cuantificación-y-representación-espacial-de-la-diversidad-biológica'><span>Instrucciones para realizar la práctica denominada &quot;Cuantificación y representación espacial de la diversidad biológica&quot;</span></h1><blockquote><ul><li><strong><em><span>Versión</span></em></strong><span>: 2021-2022</span></li><li><strong><em><span>Asignatura</span></em></strong><span> : SIG II (Máster GEOFOREST). </span></li><li><strong><em><span>Autor</span></em></strong><span>: Curro Bonet-García (fjbonet@uco.es)</span></li><li><strong><em><span>Duración</span></em></strong><span>: 3,5 horas.</span></li></ul></blockquote><p>&nbsp;</p><h2 id='objetivos'><span>Objetivos</span></h2><p><span>Esta práctica tiene los siguientes objetivos:</span></p><ul><li><p><span>Disciplinares:</span></p><ul><li><span>Reconocer el concepto de biodiversidad ya estudiado en en otras ocasiones.</span></li><li><span>Aprender un método para cuantificar la diversidad biológica. Índice de Shannon.</span></li><li><span>Aprender a generar mapas de diversidad biológica. Mapas de distribución del índice de Shannon.</span></li><li><span>Reconocer patrones de distribución de la diversidad en un territorio concreto (Sierra Nevada).</span></li><li><span>Identificar las causas de los patrones anteriores.</span></li><li><span>Reconocer cómo la diversidad biológica cambia su significado al hacerlo la escala espacial. </span></li></ul></li><li><p><span>Instrumentales:</span></p><ul><li><span>Afianzar nuestro conocimiento de SIG.</span></li><li><span>Mejorar nuestro conocimiento de R.</span></li><li><span>Aprender algunos conceptos básicos de las bases de datos relacionales.  </span></li></ul><p><span> </span></p></li></ul><h2 id='contextualización-ecológica-y-estructura-de-la-sesión'><span>Contextualización ecológica y estructura de la sesión</span></h2><p><span>Para cuantificar la diversidad biológica se pueden utilizar muchos índices. En nuestro caso usaremos el denominado índice de Shannon-Wiever, que es uno de los más robustos y comunmente utilizados. Para su cálculo se necesita la siguiente información:</span></p><ul><li><span>Delimitación espacial de la comunidad para la que queremos calcular el índice de diversidad.</span></li><li><span>Listado de especies existente en esa comunidad.</span></li><li><span>Abundancia de cada especie en dicha comunidad.</span></li></ul><p><span>La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla </span><a href='https://prezi.com/view/07Hx3W5wMEZBtpdeeouO/'><span>aquí</span></a><span> y descargarla </span><a href='https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/main/presentacion/1_Geoforest_introduccion_biodiversidad.exe.zip'><span>aquí</span></a><span> para Windows y </span><a href='https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/main/presentacion/1_Geoforest_introduccion_biodiversidad.zip'><span>aquí</span></a><span> para Mac. Y </span><a href='https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/main/presentacion/1_Geoforest_introduccion_biodiversidad.pdf'><span>aquí</span></a><span> la tienes en formato pdf.</span></p><p><iframe src="https://prezi.com/view/07Hx3W5wMEZBtpdeeouO/embed" width="1200" height="900"> </iframe></p><p><span>Además de aprender a generar un mapa de biodiversidad, veremos cómo el significado de la misma cambia cuando lo hace la escala espacial. Es decir, la diversidad medida a una escala de comunidad y a una escala mayor (por ejemplo, a escala de espacio protegido), nos da información sobre características diferentes de los ecosistemas. </span></p><p><span>Para conciliar ambos aprendizajes, procederemos de la siguiente forma:</span></p><ul><li><span>En primer lugar aprenderemos la mecánica del cálculo del mapa de diversidad a una escala de 250 m en el espacio protegido de Sierra Nevada (Sur de España). Es decir, asumiremos que una comunidad ecológica es una entidad de forma cuadrangular con un lado de 250 m. Esto no es así en la realidad, pero es la aproximación más fácil que tenemos a nuestro alcance. Una vez obtenido este mapa, trataremos de estudiar los patrones de cambio espacial de dicha diversidad. También identificaremos los factores abióticos que explican dichos patrones espaciales.</span></li><li><span>A continuación analizaremos el efecto que tiene la escala espacial en la diversidad. Trataremos de evaluar cómo cambia el significado de la diversidad cuando lo hace el tamaño del territorio en virtud del cual se agregan los datos de presencia de especies. Más concretamente, compararemos la diversidad obtenida a escala de 250 m (calculando el índice de Shannon para todas las comunidades de este tamaño en un espacio protegido dado) con la diversidad calculada considerando que todo un espacio protegido es una comunidad ecológica. </span></li></ul><p><span>Las dos siguientes secciones describen con detalle los pasos a dar para abordar los dos tipos de aprendizaje comentados más arriba:</span></p><p>&nbsp;</p><h2 id='obtención-de-un-mapa-de-biodiversidad-metodología-y-flujo-de-trabajo'><span>Obtención de un mapa de biodiversidad: Metodología y flujo de trabajo</span></h2><p><span>Como se puede observar en la presentación anterior, para calcular la diversidad de una comunidad, necesitamos dos fuentes de información:</span></p><ul><li><span>Información de distribución de especies en la zona de estudio (Sierra Nevada). Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada </span><a href='https://www.gbif.org/'><span>GBIF</span></a><span> (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente &quot;aspecto&quot; cuando son visualizados en QGIS. </span><a href='https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2020-2021/geoinfo/csv_gbif_sierra_nevada.zip'><span>Aquí</span></a><span> puedes descargar la capa con los datos de presencia de especies de Sierra Nevada. Como ves más abajo, son unos cuantos miles de puntos...</span></li></ul><p><img src="https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2020-2021/imagenes/puntos.png" referrerpolicy="no-referrer" alt="puntos"></p><p>&nbsp;</p><ul><li><span>Distribución de las comunidades ecológicas que conforman Sierra Nevada. Este paso es el más complejo conceptualmente, ya que las comunidades no tienen un límite espacial preciso. Es decir, están conectadas entre sí y no es fácil delimitar donde empieza una y acaba otra. En este caso usaremos una definición artificial y arbitraria de comunidad: un cuadrado de 250 m de lado. Generaremos una Usaremos un mapa de vegetación para delimitar las comunidades de Sierra Nevada. Asumiremos que cada polígono de dicho mapa es una comunidad ecológica. </span><a href='https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2020-2021/geoinfo/vegetacion_snevada_23030.zip'><span>Aquí</span></a><span> puedes descargar el mapa de comunidades que usaremos en esta práctica. El enlace anterior contiene un fichero de formas con la delimitación de los polígonos del mapa de vegetación a escala 1:10.000. La siguiente figura muestra la delimitación de estas comunidades en Sierra Nevada. Aunque el mapa no tiene escala, podrás reconocer el contorno del espacio protegido de Sierra Nevada.</span></li></ul><p><img src="https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2020-2021/imagenes/comunidades.png" referrerpolicy="no-referrer" alt="comunidades"></p><p>&nbsp;</p><p><span>A partir de estas dos fuentes de datos obtendremos el índice de Shannon para cada una de las comunidades de Sierra Nevada. Es decir, usaremos los datos de presencia de cada especie que hay en cada una de las comunidades para calcular su índice de Shannon. En la siguiente figura puedes ver la distribución de ocurrencias de especies en unas cuantas comunidades.</span></p><p><img src="https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2020-2021/imagenes/puntos_sobre_comunidades.png" referrerpolicy="no-referrer" alt="puntos_comunidades"></p><p>&nbsp;</p><p><span>Para ello seguiremos los pasos que se muestran en el siguiente flujo de trabajo (se ve un poco pequeño, pero si vas a la parte de abajo encontrarás una herramienta lupa para aumentar y otra para desplazarte). También puedes descargar el flujo de trabajo </span><a href='https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2020-2021/presentacion/sierra_nevada_shannon_QGIS_R.drawio.zip'><span>aquí</span></a><span> (se abre con </span><a href='https://www.diagrams.net/'><span>esta</span></a><span> aplicación).</span></p><iframe frameborder="0" style="width:100%;height:2815px;" src="https://viewer.diagrams.net/?tags=%7B%7D&amp;highlight=0000ff&amp;layers=1&amp;nav=1&amp;title=sierra_nevada_shannon_QGIS_R.drawio#R7V3rc%2BK2Fv9rmGnvTBi%2FbT4m5NHt3d5ul73dbr9khC1AXWNT2yShf30lWfJLApxgYxPobIkt%2BXl%2BOk%2BdIw%2F08fLlIQKrxS%2BhB%2F2BpngvA%2F12oGmmgn%2FI%2Fibd1yyNtcwj5KVthYYJ%2BgemjSpvXSMPxqwtbUrC0E%2FQqtzohkEA3aTUBqIofC4fNgt9r9SwAnNYegzSMHGBD4XDviIvWaStjmbn7T9BNF%2FwO6vWKO2ZAvf7PArXAbvfQNPvzXvjnl1wCfi12H3jBfDC50KTfjfQx1EYJunW8mUMfULaMtnut%2FRmzx3BIKlzwld94v%2FuzaI%2FN5vw%2B%2Birc2O%2BGFcWe80n4K8hfw%2F6tMmGU4i%2BIyRXUQf6zfMCJXCyAi7pfcZDArctkqXPumdhkDCQHbwb4gNRQsaGoZBe5Pvj0A8jemXdA9CZubg9TqLwOyz0WK4DpzPcI74le%2FEnGCXwpdDE3voBhkuYRBt8CO9VbSM9h43RK7b7nONtqIwQiwLWpq0NTTbS2CibZ1fPKY03GLFfQ3irXcJXKD2bQcuVUtqzR1NFEaFqhPCmXSa8OnJ0gfamIqG9OrKUw0mvPc4c%2F3ljJT%2F%2F%2Fdufjj25%2Bfb5H45%2BgdDQwyKB7YZRsgjnYQD8u7z1JoeCkio75mMYrhgAf8Ek2TAEwDoJy%2FBgKkabP8j5eEix3W%2FFvtsXdvF0b8P2CrDau1CJw3Xkwh1vzQZyAqI5THYcx7AgJNmJcQR9kKCnshRtHCtzP5eAeJXqhRl6IQjdrGCE8N0hGeD4FliRwE95UxEU4KN5gLddTE3al8loQnoPxIsM8phwRzD%2FQuHWcQNaUsXC%2F96i5Ry%2FoY%2Bm%2BBe4hDKPHorwk4WEDPfPcPoYwwgzzzB%2Bmr8C2Fewm%2BaoQ6Ms6mxLlHW6JrKb0Raz2WYX3FYRhm%2FnGrsm1xj9YhtRq9%2FC2MUvAXBr6K4jTAkX4dtqygTBKCLN%2F4NPwAOiElqEy%2Bk6fpUCamxAW%2BaQK0o2oC3LFAa0pQ9NSxzTfOg3T90auptYhqv6NMjsWzDlV1D20Ea3q8xu2CKzq9z8LCnX1nQrly27SIOF7IpsYrokCPifyVsHc8r4heEkG21lGlUNyiAMyDUSKiNIpw9nCduchkkSLtlOxChBhQuGYuZTmb9AngcDmY2k0P%2Bkg3r3ANk%2F1Bl0jiKOaglwrYlpXb%2Fg9ircXsog9QRGo4Y7x2FkcOzDLsa6j8t1JcUyASig1pVK930frGKUY%2BsukO99BJtwnfDb8L39SqIhXNQyLlwsFQWjIhOMmtMWMk67DFYFwYvC1RdutZCGVYiIkXv3hEkdN8WF9KKUVOYN%2FocpOib%2BjYnfZoz31Xwf%2FyOHR8k4DDCf4hFErgFBnDzDOKk%2FFLIRvn8o7AO7NevLGAlY3xEnBcFWZapMJB6M8F5LevdofxVKXAkdBSQeuCyAhC3zC0DbJKouBm5045h4qSJeYTC%2FALbVNLFFwI7KYC27AheNt82Z4JDuVYBaW9CL3oTaKPY9ZtRs2B%2Bu%2BlqDxxDgIQbyWAyMXzB6pfZrDTIxEG4PRxe8DlV%2BreFVI0R4UX5tKD9D5NTjen%2BmGIM5H%2BVXP1DTmVkqBmKo8jsfYfrqYFrnrp8YT8E8Nr5wVW99P0sMrlzU31HUn2S%2B%2F7jqzxLjNM1i32NGzYZ9f9WfJUZldPWc1N8rMOqJ%2BrPEaAq%2B%2FVi%2FINZb9ScGWC7q7yjqzxGzg44b%2BrTEQM35qD%2BjNlxdxWUkadc68SXELMULRj0JfUpKFIi%2FfuGq3gY%2FrUuuS0fqT1VE6I%2Fs%2FomxmvMxVPuf9WKLgRmSjHhG7t%2FJJb7YYkCFyBrnglhf3T9bjLEMNMvn%2Ba8l1Ky%2F1yHvuIopca7xAebqJe%2FDW3Py99escAMf4UH8A9O0QlLHgSHSlHVAuv4J6Z8Y%2BtB1Ed4hZR3p%2FfH7pI%2BQXlEYQ%2BXKmz0VH9vzrSnS7KqSQtWGk3z3KTue%2Fds40Dzd%2B8ilhC8oKVQS4r1v7GJkO68jJDu8jLCB8sMDC6nqVlLZTBX1pJLK6aRa9Phkd7Rekd0Wnb4PS2JSgwi3jie%2Fk5vi%2F397%2BDARhViXJWu2UJalS8qyjGNWhdiirXAaFc8Hjn2trsjpV%2FGmY120Sl2IR3XFm9kriG3RSx6DVWbWrdZBEhKjDhvm%2BNenhbrlsl163MPNh%2FtdbgDwfeiH8wgsB%2BWy%2BFJfsTh%2Bn8AkJfYMuRoWYA2IXyNaxYpXrW7Fa2sFr1xvFpH8PEmN%2BK8PE4n5gF83KVNVWIaAEAW5wL9mHUvsgqVcDrGLUHDTyjEpEnYijB3nALUAg64LqwzojgiDrO5Raw2FTjRcY2LMqbs4h9OZppIvYtMF1Zsls%2Fy9%2BqUtHHFO8e4lM4aJ1pj89KnvVrDatRXsiC5FJqnvPk0e8B%2Bsv3TRpX%2BHAluVCGynJYEt5TBVnBR4Zy6J%2FLX5Cnd7JZDaK0HPn1vujpcs0zTOOI3yEGPagnhDBIH368Pn7UdOeYNqFsKWU%2BEw4UR8FNoe2exUHCp8ITm%2BEtpIjF3K1rDhbY0jqnUSuqww0lt8zrczn1WX%2BdTOQpDyx%2BlkCa2CrDSssrQcKqr9OolJOwt%2B5oFIqlZdMdpZVHPnc0vFaFWqLdOAwBPEj96oVHXeiVQ1zPLSYJmFV5Sp0mU925KpYkXKu5epkhjrKchUXlHaLVQFEetYRRGrDEfZ%2FhYJKxWpHHy1CH02EDoDn6%2B10hz49NTrKAKbwgHMucqv%2FIk0FCSGyZ3LbD1aQysOpTpnmGwljq2nGM5o9yl4I33yLRew%2BFIn%2BVPqZUqkyLDzdj6%2BZWx5luxaKXjCtShXZcgcIBPP1NGTTEzIeahx1jjMQhEnJq5jNA%2BySJNoJ7g0vaTgBJK38aX2BFgSqyCYxuQPfg42jeGTU9xwuQ6QBzzxTBjwg%2F5ep1kvyWCsD67VYQ3DiGQy1bCKCEXfhVWkaxWJpevWUKyKcFTRMHLaGlVa1x7MIULgyAaVUlNwaEavBAf%2FXsJJQvx2uDgK%2B%2BGy%2BgWXWKF295JEgMhKhSSCAlH0UVkNkghN1%2BnsNG0oT0uTiWXSuIIRVRnpBDZ%2BIMn1BBksyG7ylDJxKxPUvRLBlc8emJYY7bMNLpWLIjhvbR5yMcf7LDi0bqyIL%2F3aEw7VT1lnHgEuntHdE7g0MbQ3RaEoll6TX139pEshqVprRE7pzlCrzEtkn28qBtE0UVDpbc0M6p0E0bof907dcd8vh1ETa%2F3GwHfXPlX%2FwWCsDW7IDDsKPPSEvHUonyIseYarkJyLN8mwxOQMo93%2BoWA3TH77WNdzq7qBo11uYLwCQWlo8goNN82AIy8azafgB4V6ypiiinTrR7JJLqvQso8ZWCJ%2Fk56%2BDIMwphKhdEheGaLIKkNK32YzMXz4J%2F20WLbH4TQpoLjllmyTRzIJgCYeBfuOVbNj%2BRB%2F02W0%2FDLpqMl6MhPUzIxQMzUzzZLlmTeWrE%2BT259mboGazAY1uRXKb52CmN2a24u4oSiWST8VzKSdygvSotLdjPdJk02bCm%2BWiuE6tMu6MrLlXGwSaZ0fSS1Lfp1N3pFamLwjFd1ZZ2pT8k4mxLf0UjKynnnhKarQ0t0M32JjedSx44ThmfFYylI9NOIzDcc1o22K00sjVWbE563Na8d3n8q%2FU%2Bnt1479crP5c0sqAZFUkVSEvS0T9l8eg%2FXyESvUx3j1iNVivZDkAYZnM%2BzklNnJMSQ%2BsSQDpj1DUztPVtLrslK%2FAoySLxQ1ZGge077UtZO0LyUa%2FGJgXgzMi4F5SPRlVJmb74eBeZ5RYr3uPE7fDEzZSoPNGZinYl0aitYz69I4zzCmXjd8b%2FQrjKmL4fv%2FBygaMDOBTG1KZjCxMfFEM1FG6XQouY2LLcwwtSdJ1811IJ73w7bclx%2FbNT631FP0SSmqFaU4knxS8%2BhK0TjPJDajbtSFZVH2hZmN7VGXrR5WHb0osGI1EvO4BPF%2B3VnTNO06YOOY1ZolVZHkMaiGI%2BPG9hTrec6Lcxbbz4v9Ctvw55aHbT6hQTrH54dzjey0qf2cNDpibMn07LMWVFVJveDx1eB55vgZdX1Do1%2B%2BobHdN7yowUPUoGb3QA2eZ5zGqO1f9iubzxD9y8l6yXTgfz4y7SeprgDzCM5B4BGXkk5UCOUXR5m3EC5lnGhqrqBZDUnC29E1q3me0SKjbtJb8wWEh3GzbIH7djTrZAGCIAxOWYXqmj20qzrUVES248WKR1Gg%2FCPIZ8ZyZt2Yjtmv%2FGpTjOlc0%2FiqCjwapy0WJyJBOcJ4CweV8gFkZYuVoG5azkLuReK%2Bt4GHXMnyDDS0m7Nu6SY19PQSRvmiD1K9LJybqVvipPVcCRuGIdjUlmTC5vhquJuVVzuXCXVTgvhXyPsiE8SUoBLDV6A85sKobZduGFweZgxk6yIDyZZ0a0%2BhnmdqKueJ%2FczTr7U7%2BXPvWFSS8MsM%2BXWWH3qOMHvsXH9op3tpKiehtKrFUqojmRA5vtYSF7YUPf%2FUFqHRuRjBKAKPAXwCHhjGi1WtFI8OpWcj8KnCIphX6siUBPJMe6hqR5Sb0m9lvyofVJ4OuiMJNDNJB5quGwQL6D9BsoKp0DPYkibqEP%2B12PXMaEU6jfQ5aKePxTeMrkjOKQrmaX8QRkvgZ4eQBVav2JqqpJstq1rqRlhNBEkhRbXYmUQgiGf4ovzyQZ7e%2BhxGXvnuxdOnwP0%2Bp0roqkJTjTj5jJYaibbybbNAWQ%2FFKx8wqqLAR4Ubz%2FwQJMUH2uvtl3JNDXRw7PzEWVZXNSFuYPDy0NI3fyQfd2piGeGdq0gW2LWEW38waNzo1LjBnXttMvUnkZ1tqT7J18zPxgPgM%2BtdgPHpow%2F%2FCG5nSvw8%2Fssef3Dc%2BO7qpGLYbzf4rboGP180uScGv%2BTL1AXBVbYKH%2BlK6Klt%2BI55CJsxVaOQU6moX%2Fj3k5rmoi%2Ffru7uRt9%2B1sDE2Pz3a%2Fzx%2B68frkT1Iv3GVVeL0qtVINQmgDCVsp4XQZB9TqQJk1yKgahVPr93APgXibg2oZ9Fr2Cgt4SBVJtop6RN6sYbispF%2BtaSSKz0uM6S%2FHY99a7vfQPypVLyRlTGV%2FQFvgVaxbCoKXbxFVZBHv00LSG9B%2BJFBjnz875QuHXiWy0BoRD%2Fe4uWc%2FyGPpriX%2BASyjx6KMJPFhIy3D%2FD6WMMI8w4w%2Fhp3lIgyVKqbo0tMd14eXLTTo3cdOvadjMstcRvQ0Ub7eE5%2BOY15Xdx1F7O4x%2Bd7QnriTl%2BtzB28UuQCG5hCfkEMwadL9VJRAkT%2B1pVhgqfhO9vjNWSFEVakviq3RZriFaz9Kt7RzUHmqB1Vg7HCO1wGVCUQRLDV3VaIrSYIff57vbD9S%2BnT2rDKBtXjiJ%2BfUn2oYLWSM3j26dhXL1dpnNZvd9V7yxze%2BdzF3iBy%2FAweIzPykfXR9UEbEsXuKcpF33AlhfI%2BwoLC%2Bh3%2FwI%3D"></iframe><p><span>La ejecución del anterior flujo de trabajo se realiza usando R. Para ello iremos ejecutando secuencialmente las líneas del siguiente bloque de código:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="R" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="r"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">#Este script calcula el Indice Shannon de Sierra Nevada</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># usando la información existente en GBIF y un mapa de vegetación a escala 1:10.000</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">## Establece directorio de trabajo. Recuerda cambiarlo por el tuyo.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">setwd</span>(<span class="cm-string">"/Users/fjbonet_trabajo/Google_Drive/4_docencia/eco_ccaa_uco/actos_docentes/P_shannon_ecologia_ccaa/preparacion"</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">## Carga paquetes que necesitamos</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">install.packages</span>(<span class="cm-string">"rgdal"</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">library</span>(<span class="cm-variable">rgdal</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">install.packages</span>(<span class="cm-string">"sqldf"</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">library</span>(<span class="cm-variable">sqldf</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">## Importa la capa con las ocurrencias de GBIF</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">ocurrencias</span><span class="cm-operator cm-arrow">&lt;-</span><span class="cm-variable">readOGR</span>(<span class="cm-variable">dsn</span><span class="cm-operator">=</span><span class="cm-string">"."</span>, <span class="cm-variable">layer</span><span class="cm-operator">=</span><span class="cm-string">"ocurrencias_sierra_nevada_23030"</span>, <span class="cm-variable">verbose</span> <span class="cm-operator">=</span> <span class="cm-variable">FALSE</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">## Importa la capa con la delimitación de las comunidades ecológicas.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">comunidades</span><span class="cm-operator cm-arrow">&lt;-</span><span class="cm-variable">readOGR</span>(<span class="cm-variable">dsn</span><span class="cm-operator">=</span><span class="cm-string">"."</span>,<span class="cm-variable">layer</span><span class="cm-operator">=</span><span class="cm-string">"vegetacion_snevada_23030"</span>, <span class="cm-variable">verbose</span> <span class="cm-operator">=</span> <span class="cm-variable">FALSE</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">## Unión espacial: asigna a cada punto el código de la comunidad en la que se encuentra.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">ocurrencias</span><span class="cm-operator cm-dollar">$</span><span class="cm-variable">id_com</span> <span class="cm-operator cm-arrow">&lt;-</span> <span class="cm-variable">over</span>(<span class="cm-variable">ocurrencias</span>, <span class="cm-variable">comunidades</span>)<span class="cm-operator cm-dollar">$</span><span class="cm-variable">OBJECTID</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">## Extraer la "tabla de atributos" para hacer los cálculos del índice de Shannon</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">bio</span><span class="cm-operator cm-arrow">&lt;-</span><span class="cm-variable">ocurrencias</span>@<span class="cm-variable">data</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">## Calcular el índice de Shannon</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">### Calcular el número de individuos por especie y por comunidad (num_ind_sp_com)</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">T_num_ind_sp_com</span><span class="cm-operator cm-arrow">&lt;-</span><span class="cm-variable">sqldf</span>(<span class="cm-string">"SELECT id_com, scientific,  count(scientific) num_ind_sp_com  FROM bio GROUP BY id_com, scientific"</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">### Calcular el número total de individuos por comrícula.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">T_num_ind_com</span><span class="cm-operator cm-arrow">&lt;-</span><span class="cm-variable">sqldf</span>(<span class="cm-string">"SELECT id_com, sum(num_ind_sp_com) num_ind_com FROM T_num_ind_sp_com GROUP BY id_com"</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">### Fusionar las tablas anteriores para calcular Pi</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">T_num_ind_sp_com_mas_num_ind_com</span><span class="cm-operator cm-arrow">&lt;-</span><span class="cm-variable">sqldf</span>(<span class="cm-string">"SELECT id_com, scientific, num_ind_sp_com, num_ind_com FROM T_num_ind_sp_com LEFT JOIN T_num_ind_com USING(id_com)"</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">### Calcular pi por especie y por comunidad</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">T_num_ind_sp_com_mas_num_ind_com</span><span class="cm-operator cm-arrow">&lt;-</span><span class="cm-variable">sqldf</span>(<span class="cm-string">"SELECT id_com, scientific, num_ind_sp_com, num_ind_com, (num_ind_sp_com*1.0/num_ind_com) pi FROM T_num_ind_sp_com_mas_num_ind_com"</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">### Calcular el log2 pi por especie y por comunidad (log = ln). Log2(pi)=log(pi)/log(2)</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">T_num_ind_sp_com_mas_num_ind_com</span><span class="cm-operator cm-arrow">&lt;-</span><span class="cm-variable">sqldf</span>(<span class="cm-string">"SELECT id_com, scientific, num_ind_sp_com, num_ind_com, pi, (log(pi)/log(2))*pi lnpi_pi FROM T_num_ind_sp_com_mas_num_ind_com"</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">### Calcular H por comunidad</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">T_Shannon</span><span class="cm-operator cm-arrow">&lt;-</span><span class="cm-variable">sqldf</span>(<span class="cm-string">"SELECT id_com, sum(lnpi_pi)*-1 H FROM T_num_ind_sp_com_mas_num_ind_com GROUP BY id_com"</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">## Fusionar la tabla que tiene el índice de Shannon con la distribución de comunidades.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">comunidades</span><span class="cm-operator cm-arrow">&lt;-</span><span class="cm-variable">merge</span>(<span class="cm-variable">x</span> <span class="cm-operator">=</span> <span class="cm-variable">comunidades</span>, <span class="cm-variable">y</span> <span class="cm-operator">=</span> <span class="cm-variable">T_Shannon</span>, <span class="cm-variable">by.x</span> <span class="cm-operator">=</span> <span class="cm-string">"OBJECTID"</span>, <span class="cm-variable">by.y</span> <span class="cm-operator">=</span> <span class="cm-string">"id_com"</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">## Exportar la capa resultante a un shapefile.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">writeOGR</span>(<span class="cm-variable">comunidades</span>, <span class="cm-variable">dsn</span><span class="cm-operator">=</span><span class="cm-string">"."</span>, <span class="cm-variable">layer</span><span class="cm-operator">=</span><span class="cm-string">"Shannon_com_sierra_nevada"</span>, <span class="cm-variable">driver</span><span class="cm-operator">=</span><span class="cm-string">"ESRI Shapefile"</span>, <span class="cm-variable">overwrite</span><span class="cm-operator">=</span><span class="cm-variable">TRUE</span> )</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 1298px;"></div><div class="CodeMirror-gutters" style="display: none; height: 1298px;"></div></div></div></pre><p>&nbsp;</p><p><span>La siguiente presentación muestra paso a paso el flujo de trabajo. También puedes verla </span><a href='https://prezi.com/view/gOJNmvizzKEsXVxEHe3I/'><span>aquí</span></a><span> y descargarla </span><a href='https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2020-2021/presentacion/2_mapa_biodiversidad_sierra_nevada.exe'><span>aquí</span></a><span> para Windows y aquí para </span><a href='https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2020-2021/presentacion/2_mapa_biodiversidad_sierra_nevada.zip'><span>Mac</span></a><span>. Y </span><a href='https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2020-2021/presentacion/2_mapa_biodiversidad_sierra_nevada.pdf'><span>aquí</span></a><span> la tienes en formato pdf.</span></p><p>&nbsp;</p><p><iframe src="https://prezi.com/view/gOJNmvizzKEsXVxEHe3I/embed" width="1200" height="900"> </iframe></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='resultados-esperables'><span>Resultados esperables</span></h2><p><span>El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de un fichero de formas vectorial en el que se ha asignado el valor del índice Shannon a cada polígono del mapa de vegetación inicial. Aquí se puede descargar dicho fichero de formas.</span></p><p>&nbsp;</p><p><img src="https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/2020-2021/imagenes/shannon_snev.png" referrerpolicy="no-referrer" alt="shannon"></p><p>&nbsp;</p><p><span>En el mapa resultante se pueden identificar varios patrones de distribución espacial de la biodiversidad en Sierra Nevada. Durante la práctica reflexionamos sobre dichos patrones:</span></p><ul><li><p><span>¿Cómo cambia la diversidad al aumentar la altitud?</span></p></li><li><p><span>¿A qué se puede deber dicho patrón?</span></p></li><li><p><span>¿Crees que se repetiría el mismo patrón en otras montañas de la Tierra?</span></p></li><li><p><span>¿hay algún patrón de cambio de diversidad en dirección este-oeste?</span></p></li><li><p><span>En caso afirmativo, ¿a qué puede deberse?</span></p><p>&nbsp;</p></li></ul><h2 id='vídeos-de-las-sesiones'><span>Vídeos de las sesiones</span></h2><p><span>Lamentablemente en esta ocasión no grabé las sesiones. Así que tenemos que conformarnos con versiones similares de esta práctica en otros años y en otras titulaciones. Ahí va la misma práctica pero impartida para alumnos de tercer curso de biología:</span></p><iframe width="560" height="315" src="https://www.youtube.com/embed/6OOusJU4ljs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>
