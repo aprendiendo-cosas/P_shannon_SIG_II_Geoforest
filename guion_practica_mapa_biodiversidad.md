@@ -1,7 +1,7 @@
 # Instrucciones para realizar la práctica denominada "Cuantificación y representación espacial de la diversidad biológica"
 
 
-> + **_Versión_**: 2022-2023
+> + **_Versión_**: 2023-2024
 > + **_Asignatura_** : SIG II (Máster GEOFOREST). 
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
 > + **_Duración_**: 4 horas.
@@ -34,6 +34,8 @@ Para cuantificar la diversidad biológica se pueden utilizar muchos índices. En
 + Abundancia de cada especie en dicha comunidad.
 
 La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/view/07Hx3W5wMEZBtpdeeouO/) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/2022-2023/presentacion/1_Geoforest_introduccion_biodiversidad.exe.zip) para Windows y [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/2022-2023/presentacion/1_Geoforest_introduccion_biodiversidad.zip) para Mac. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/2022-2023/presentacion/1_Geoforest_introduccion_biodiversidad.pdf) la tienes en formato pdf.
+
+
 
 
 <p><iframe src="https://prezi.com/view/07Hx3W5wMEZBtpdeeouO/embed" width="1200" height="900"> </iframe></p>
@@ -119,12 +121,6 @@ grid250<-merge(x = grid250, y = T_Shannon, by.x = "id", by.y = "id_250")
 writeOGR(grid250, dsn=".", layer="Shannon_250_sierra_nevada_R", driver="ESRI Shapefile", overwrite=TRUE )
 
 ```
-
-La siguiente presentación muestra paso a paso el flujo de trabajo. También puedes verla [aquí](https://prezi.com/view/LlGhTybTfp4ILCRTR9Uh) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/2022-2023/presentacion/2_Geoforest_shannon_Sierra_nevada.exe) para Windows y aquí para [Mac](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/2022-2023/presentacion/2_Geoforest_shannon_Sierra_nevada.zip). Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/2022-2023/presentacion/2_Geoforest_shannon_Sierra_nevada.pdf) la tienes en formato pdf.
-
-
-<p><iframe src="https://prezi.com/view/LlGhTybTfp4ILCRTR9Uh/embed" width="1200" height="900"> </iframe></p>
-
 
 ## Resultados esperables
 El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de un fichero de formas vectorial en el que se ha asignado el valor del índice Shannon a cada cuadrícula de la malla de 250 m. 
