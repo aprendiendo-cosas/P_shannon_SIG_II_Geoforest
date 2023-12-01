@@ -155,7 +155,13 @@ En el mapa resultante se pueden identificar varios patrones de distribución esp
 
 + En caso afirmativo, ¿a qué puede deberse?
 
-  
+## Vídeo de la sesión
 
 
+
+El siguiente vídeo muestra la grabación de la sesión. Por alguna razón que desconozco no se grabó la pantalla compartida de los últimos minutos. He intentado recuperarlo, pero no ha sido posible. También hubo un momento en el que se cortó la conexión. Reinicié la grabación después de esto, pero tampoco se guardó. Así que, el vídeo está incompleto.
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7pmW2NqPi74?si=gQI6Dcj5EUwu4hCp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
