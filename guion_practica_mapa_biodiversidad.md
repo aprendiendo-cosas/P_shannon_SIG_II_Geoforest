@@ -159,9 +159,12 @@ En el mapa resultante se pueden identificar varios patrones de distribución esp
 
 
 
-El siguiente vídeo muestra la grabación de la sesión. Por alguna razón que desconozco no se grabó la pantalla compartida de los últimos minutos. He intentado recuperarlo, pero no ha sido posible. También hubo un momento en el que se cortó la conexión. Reinicié la grabación después de esto, pero tampoco se guardó. Así que, el vídeo está incompleto.
+El siguiente vídeo muestra la grabación de la sesión del día 23 de noviembre. Lamentablemente está incompleta. El vídeo no se grabó correctamente a partir del minuto 2:44:00
+
+<iframe width="560" height="515" src="https://www.youtube.com/embed/rJvTOStDAXw?si=vbKkzQ3TjqQv0ECx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Además, en el siguiente vídeo (que sí está completo) podéis ver cómo comentamos el día 24 los resultados obtenidos. Evaluamos patrones de distribución espacial de la diversidad y tratamos de identificar las variables que explican dichos patrones.
 
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7pmW2NqPi74?si=gQI6Dcj5EUwu4hCp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+<iframe width="560" height="515" src="https://www.youtube.com/embed/ttcaQypt6e4?si=2ahiiO13fsfZKphh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
