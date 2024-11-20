@@ -37,7 +37,7 @@ Para cuantificar la diversidad biológica se pueden utilizar muchos índices. En
 + Delimitación espacial de la comunidad para la que queremos calcular el índice de diversidad.
 + Listado de especies existente en esa comunidad.
 + Abundancia de cada especie en dicha comunidad.
-kk
+
 La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/view/07Hx3W5wMEZBtpdeeouO/) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/main/presentacion/1_Geoforest_introduccion_biodiversidad.exe.zip) para Windows y [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/main/presentacion/1_Geoforest_introduccion_biodiversidad.zip) para Mac. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/main/presentacion/1_Geoforest_introduccion_biodiversidad.pdf) la tienes en formato pdf.
 
 
@@ -67,7 +67,7 @@ A partir de estas dos fuentes de datos obtendremos el índice de Shannon para ca
 
 ![puntos_comunidades](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/main/images/grid.png)
 
-Para ello seguiremos los pasos que se muestran en el siguiente flujo de trabajo (se ve un poco pequeño, pero si vas a la parte de abajo encontrarás una herramienta lupa para aumentar y otra para desplazarte). También puedes descargar el flujo de trabajo [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/presentacion/sierra_nevada_shannon_R.drawio.zip) (se abre con [esta](https://www.diagrams.net/) aplicación).
+Para ello seguiremos los pasos que se muestran en el siguiente flujo de trabajo (se ve un poco pequeño, pero si vas a la parte de abajo encontrarás una herramienta lupa para aumentar y otra para desplazarte). También puedes descargar el flujo de trabajo [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/presentacion/sierra_nevada_shannon_R.drawio.zip) (se abre con [esta](https://www.diagrams.net/) aplicación).
 
 
 
@@ -75,7 +75,7 @@ Para ello seguiremos los pasos que se muestran en el siguiente flujo de trabajo 
 
 
 
-La ejecución del anterior flujo de trabajo se realiza usando R. Para ello iremos ejecutando secuencialmente las líneas del siguiente bloque de código. También puedes descargar el código [aquí](https://github.com/aprendiendo-cosas/P_shannon_ecologia_ccaa/raw/main/geoinfo/shannon_sierra_nevada.R.zip).:
+La ejecución del anterior flujo de trabajo se realiza usando R. Para ello iremos ejecutando secuencialmente las líneas del siguiente bloque de código. También puedes descargar el código [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/geoinfo/shannon_sierra_nevada.R.zip).:
 
 ```R
 # Este script genera un mapa del índice de Shannon en cuadrículas de 250x250 m a partir de los datos de presencias de especies existentes en GBIF.
