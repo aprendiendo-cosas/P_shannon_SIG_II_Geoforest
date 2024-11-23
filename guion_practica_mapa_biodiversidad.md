@@ -58,14 +58,14 @@ Para satisfacer los objetivos planteados, procederemos de la siguiente forma:
 Como se puede observar en la presentación anterior, para calcular la diversidad de una comunidad, necesitamos dos fuentes de información:
 + Información de distribución de especies en la zona de estudio (Sierra Nevada). Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada [GBIF](https://www.gbif.org/) (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/2024_2025/geoinfo/csv_gbif_sierra_nevada.zip) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada. Como ves más abajo, son unos cuantos miles de puntos...
 
-![puntos](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/puntos.png)
+![puntos](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/2024_2025/images/puntos.png)
 
 
 + Distribución de las comunidades ecológicas que conforman Sierra Nevada. Este paso es el más complejo conceptualmente, ya que las comunidades no tienen un límite espacial preciso. Es decir, están conectadas entre sí y no es fácil delimitar donde empieza una y acaba otra. En este caso usaremos una definición artificial y arbitraria de comunidad: un cuadrado de 250 m de lado. En el ejercicio que tendrás que hacer para evaluar tu aprendizaje, habrá disponible una fuente de información menos arbitraria: los polígonos de un mapa de vegetación. 
 
 A partir de estas dos fuentes de datos obtendremos el índice de Shannon para cada una de las comunidades de Sierra Nevada. Es decir, usaremos los datos de presencia de cada especie que hay en cada una de las comunidades para calcular su índice de Shannon. En la siguiente figura puedes ver la distribución de presencias de especies en unas cuantas comunidades.
 
-![puntos_comunidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/grid.png)
+![puntos_comunidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/2024_2025/images/grid.png)
 
 Para ello seguiremos los pasos que se muestran en el siguiente flujo de trabajo (se ve un poco pequeño, pero si vas a la parte de abajo encontrarás una herramienta lupa para aumentar y otra para desplazarte). También puedes descargar el flujo de trabajo [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/2024_2025/presentacion/sierra_nevada_shannon_R.drawio.zip) (se abre con [esta](https://www.diagrams.net/) aplicación).
 
@@ -147,7 +147,7 @@ st_write(grid_250m_sf, "Shannon_250_sierra_nevada.shp", append=FALSE)
 El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de un fichero de formas vectorial en el que se ha asignado el valor del índice Shannon a cada cuadrícula de la malla de 250 m. 
 
 
-![shannon](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/mapa_shannon.png)
+![shannon](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/2024_2025/images/mapa_shannon.png)
 
 
 En el mapa resultante se pueden identificar varios patrones de distribución espacial de la biodiversidad en Sierra Nevada. Durante la práctica reflexionamos sobre dichos patrones:
@@ -162,9 +162,13 @@ En el mapa resultante se pueden identificar varios patrones de distribución esp
 
 + En caso afirmativo, ¿a qué puede deberse?
 
+
+
+
+
 ## Vídeo de la sesión
 
-
+<iframe width="560" height="515" src="https://www.youtube.com/embed/DZaSvXDW1Kc?si=1Pz-g4pUfQkeJdlb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 
