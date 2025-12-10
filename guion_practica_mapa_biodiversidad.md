@@ -222,7 +222,17 @@ Comparemos este mapa con el primero que hemos hecho: el mapa del índice de Shan
 
 Podemos comparar la diversidad promedio de las comunidades de cada espacio protegido con el índice de Shannon que recibe dicho espacio si lo calculamos a escala de paisaje. Los resultados se pueden ver en la siguiente tabla:
 
-![tabla_diversidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/tabla_diversidades.png)
+![tabla_diversidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/tabla_diversidades.jpg)
+
+¿¿¿¿ Qué está pasando aquí ???
+
+Observamos cómo los espacios protegidos que tienen valores altos de diversidad a escala de paisaje (shannon calculado con el límite del espacio protegido), tienen valores promedios bajos de diversidad a escala de 250 m. Y viceversa. ¿Qué clase de brujería es esta?
+
+Quizás esta presentación nos ayude a entender un poco esto:
+
+
+
+<iframe src="https://prezi.com/p/embed/hlzq3rFR88R4Vs84CVly/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="415" width="738"></iframe>
 
 
 
