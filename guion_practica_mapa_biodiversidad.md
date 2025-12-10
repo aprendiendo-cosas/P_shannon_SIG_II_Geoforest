@@ -158,11 +158,15 @@ El resultado de la sección anterior es un mapa que muestra la distribución de 
 
 
 
+![Sierra_nevada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_Snevada_250.png)
+
+¿En qué se diferencia esta imagen a la anterior?
 
 
 
+![Sierra_nevada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_Snevada_250_lowpass.png)
 
-
+También podemos generar un mapa parecido de toda Andalucía. Al utilizar millones de puntos de GBIF, se tardan varias horas en ejecutar el script anterior. Así que no lo haremos en clase. Aquí puedes descargar un mapa del índice de Shannon de todas las cuadrículas de 250m de Andalucía. 
 
 
 
