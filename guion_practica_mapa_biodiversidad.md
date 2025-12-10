@@ -186,7 +186,23 @@ Si hacemos un poco de zoom en el sureste de Andalucía, observamos algo así:
 
 ¿Podemos ver patrones de diversidad a escala mayor que la analizada anteriormente?
 
-En esta capa vectorial se muestran varias zonas localizadas en la parte occidental del continente americano. Desde Alaska hasta casi el Ecuador. En cada una de esas zonas se ha generado un mapa de diversidad parecido al que hemos creado para Sierra Nevada. La diferencia es que se ha calculado el promedio de la diversidad de todas las cuadrículas de 250m de cada zona. Eso explica por qué cada polígono tiene un único valor del índice Shannon. Descarga la capa y representála en un SIG. Puedes ponerle de fondo una imagen de satélite usando. 
+En [esta](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/geoinfo/zonas_gradiente_latitudinal.zip) capa vectorial se muestran varias zonas localizadas en la parte occidental del continente americano. Desde Alaska hasta casi el Ecuador. En cada una de esas zonas se ha generado un mapa de diversidad parecido al que hemos creado para Sierra Nevada. La diferencia es que se ha calculado el promedio de la diversidad de todas las cuadrículas de 250m de cada zona. Eso explica por qué cada polígono tiene un único valor del índice Shannon. Descarga la capa y representála en un SIG. Puedes ponerle de fondo una imagen de satélite usando un plugin llamado *quickmapservices*. El resultado debería de ser parecido a esta imagen:
+
+![Shannon_250_sureste](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/gradiente_latitud.png)
+
+¿Se puede identificar algún patrón espacial? En caso afirmativo, ¿a qué se debe? ¿en qué se parece este patrón a alguno de los observados anteriormente?
+
+
+
+## Relación entre la diversidad y la escala espacial
+
+Hasta aquí hemos trabajado con un concepto idealizado de comunidad que tiene 250 m de lado. Sin embargo, en la introducción hemos explicado claramente que la delimitación de la comunidad tiene una fuerte componente arbitraria. ¿qué pasaría si calculáramos el índice de Shannon en Andalucía usando un tamaño de cuadrícula creciente?. Es decir, ¿en qué se parece el mapa de Shannon de 250 m a otro generado, por ejemplo, con una cuadrícula de 1000 m de lado?
+
+
+
+
+
+
 
 
 
