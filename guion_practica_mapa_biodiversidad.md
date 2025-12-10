@@ -212,9 +212,13 @@ Las siguientes tres imágenes muestran el resultado de este experimento con tama
 
 Ahora daremos un nuevo paso en este proceso de cambiar la escala de cálculo del índice de Shannon. Calculemos ahora el mismo índice considerando que los espacios naturales protegidos de Andalucía son comunidades. Es decir, calculemos el índice de Shannon de los espacios protegidos. La siguiente imagen muestra el resultado de esto:
 
+![Shannon_natura](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_natura.png)
 
+Comparemos este mapa con el primero que hemos hecho: el mapa del índice de Shannon a 250m:
 
+![Shannon_250_andalucia](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_andalucia_250.png)
 
+¿Qué diferencias observamos entre ambos mapas?
 
 
 
