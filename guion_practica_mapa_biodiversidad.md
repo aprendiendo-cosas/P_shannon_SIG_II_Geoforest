@@ -188,7 +188,7 @@ Si hacemos un poco de zoom en el sureste de Andalucía, observamos algo así:
 
 En [esta](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/geoinfo/zonas_gradiente_latitudinal.zip) capa vectorial se muestran varias zonas localizadas en la parte occidental del continente americano. Desde Alaska hasta casi el Ecuador. En cada una de esas zonas se ha generado un mapa de diversidad parecido al que hemos creado para Sierra Nevada. La diferencia es que se ha calculado el promedio de la diversidad de todas las cuadrículas de 250m de cada zona. Eso explica por qué cada polígono tiene un único valor del índice Shannon. Descarga la capa y representála en un SIG. Puedes ponerle de fondo una imagen de satélite usando un plugin llamado *quickmapservices*. El resultado debería de ser parecido a esta imagen:
 
-![Shannon_250_sureste](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/gradiente_latitud.png)
+![gradiente_lat](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/gradiente_latitud.png)
 
 ¿Se puede identificar algún patrón espacial? En caso afirmativo, ¿a qué se debe? ¿en qué se parece este patrón a alguno de los observados anteriormente?
 
@@ -198,11 +198,19 @@ En [esta](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/re
 
 Hasta aquí hemos trabajado con un concepto idealizado de comunidad que tiene 250 m de lado. Sin embargo, en la introducción hemos explicado claramente que la delimitación de la comunidad tiene una fuerte componente arbitraria. ¿qué pasaría si calculáramos el índice de Shannon en Andalucía usando un tamaño de cuadrícula creciente?. Es decir, ¿en qué se parece el mapa de Shannon de 250 m a otro generado, por ejemplo, con una cuadrícula de 1000 m de lado?
 
+Las siguientes tres imágenes muestran el resultado de este experimento con tamaños de malla de 500, 1000 y 10000 m respectivamente.
 
 
 
+![Shannon_andalucia_500](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_andalucia_500.png)
 
+![Shannon_andalucia_1000](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_andalucia_1000.png)
 
+![Shannon_andalucia_10000](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_andalucia_10000.png)
+
+¿En qué se diferencian estas imágenes? ¿Han cambiado los patrones espaciales? ¿Qué quiere decir esto?
+
+Ahora daremos un nuevo paso en este proceso de cambiar la escala de cálculo del índice de Shannon. Calculemos ahora el mismo índice considerando que los espacios naturales protegidos de Andalucía son comunidades. Es decir, calculemos el índice de Shannon de los espacios protegidos. La siguiente imagen muestra el resultado de esto:
 
 
 
