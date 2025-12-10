@@ -62,16 +62,9 @@ La siguiente presentación muestra de forma muy sencilla en qué consiste este m
 
 <iframe src="https://prezi.com/p/embed/jLHzHdM6BpTgCUa4WaUt/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="415" width="738"></iframe>
 
-+ Para satisfacer los objetivos planteados, procederemos de la siguiente forma:
-
-1. En primer lugar aprenderemos la mecánica del cálculo del mapa de diversidad a una escala de 250 m en el espacio protegido de Sierra Nevada (Sur de España). Es decir, asumiremos que una comunidad ecológica es una entidad de forma cuadrangular con un lado de 250 m. Esto no es así en la realidad, pero es la aproximación más fácil que tenemos a nuestro alcance. Una vez obtenido este mapa, trataremos de estudiar los patrones de cambio espacial de dicha diversidad. También identificaremos los factores abióticos que explican dichos patrones espaciales.
-2. Las técnicas de análisis aprendidas en el primer punto deberán ser aplicadas a la actividad entregable de esta asignatura. Es decir, será necesario incluir un mapa de biodiversidad como elemento para realizar la estratificación del territorio. En esta práctica trabajaremos con Sierra Nevada porque es un territorio grande que ofrece interesantes oportunidades para interpretar patrones de cambio de la diversidad en el territorio. Pero el ejercicio a entregar se desarrolla en otro lugar. Tendréis que transferir lo aprendido esta práctica a ese otro territorio
 
 
-
-## Obtención de un mapa de biodiversidad: Metodología y flujo de trabajo
-
-Como se puede observar en la presentación anterior, para calcular la diversidad de una comunidad, necesitamos dos fuentes de información:
+Como se puede observar en la presentación anterior, para calcular la diversidad de una comunidad, usaremos dos fuentes de información:
 + Información de distribución de especies en la zona de estudio (Sierra Nevada). Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada [GBIF](https://www.gbif.org/) (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/2024-2025/geoinfo/csv_gbif_sierra_nevada.zip) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada. Como ves más abajo, son unos cuantos miles de puntos...
 
 ![puntos](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/2024-2025/images/puntos.png)
@@ -156,6 +149,21 @@ st_write(grid_250m_sf, "Shannon_250_sierra_nevada.shp", append=FALSE)
 
 
 ```
+
+
+
+## Identificación de patrones espaciales de la diversidad en Andalucía y en Sierra Nevada
+
+El resultado de la sección anterior es un mapa que muestra la distribución de la diversidad en Sierra Nevada. Representémoslo en QGIS tal y como se observa en la siguiente imagen. ¿qué patrones espaciales podemos identificar?, ¿cómo se explican estos patrones espaciales?
+
+
+
+
+
+
+
+
+
 
 
 ## Resultados esperables
