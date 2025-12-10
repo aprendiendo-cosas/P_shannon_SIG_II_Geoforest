@@ -2,7 +2,7 @@
 
 
 > + **_Tipo de material_**: <span style="display: inline-block; font-size: 12px; color: white; background-color: #029BF9; border-radius: 5px; padding: 5px; font-weight: bold;"> Teoría</span> <span style="display: inline-block; font-size: 12px; color: white; background-color: #4caf50; border-radius: 5px; padding: 5px; font-weight: bold;"> Prácticas</span> 
-> + **_Versión_**: 2024-2025 
+> + **_Versión_**: 2025-2026 
 > + **_Asignatura_** : SIG II (Máster GEOFOREST). 
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
 > + **_Duración_**: 4 horas.
@@ -11,10 +11,10 @@
 
 ## Objetivos
 
-Esta práctica tiene los siguientes objetivos:
+Esta sesión tiene los siguientes objetivos:
 
 + Disciplinares:
-  + Reconocer el concepto de biodiversidad ya estudiado en en otras ocasiones.
+  + Reconocer el concepto de biodiversidad.
   + Aprender un método para cuantificar la diversidad biológica. Índice de Shannon.
   + Aprender a generar mapas de diversidad biológica. Mapas de distribución del índice de Shannon.
   + Reconocer patrones de distribución de la diversidad en un territorio concreto.
@@ -23,14 +23,32 @@ Esta práctica tiene los siguientes objetivos:
 + Instrumentales:
   + Afianzar nuestro conocimiento de SIG.
   + Mejorar nuestro conocimiento de R.
-  + Poner en práctica algunos conceptos ya conocidos de las bases de datos relacionales. 
+  + Poner en práctica algunos conceptos de las bases de datos relacionales. 
   + Entrenar la habilidad de transferir conocimientos de un ámbito (territorial en este caso) a otro.
   + Entrenar la habilidad de cuestionarse la utilidad de las variables ambientales para conseguir un objetivo concreto. 
   + Cuestionar la forma en la que obtenemos un mapa de distribución de una variable continua a partir de datos tomados de forma discreta.
 
 
 
-## Contextualización ecológica y estructura de la sesión
+## El concepto de diversidad biológica
+
+Para maximizar el aprendizaje en esta sesión es importante que tengamos claro en qué consiste la diversidad biológica. La diversidad es un atributo de las comunidades ecológicas. En esta sección analizaremos también cuáles son las variables que explican los cambios de diversidad que observamos en el territorio.
+
+Usaremos la siguiente presentación para explicar estos conceptos y para generar un punto de partida común entre todos los estudiantes.
+
+<iframe src="https://prezi.com/p/embed/JwRiniBpVzC8DmGcVp9q/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="415" width="560"></iframe>
+
+
+
+## Generación de un mapa continuo de diversidad biológica
+
+En la sección anterior hemos aprendido que la diversidad es un descriptor de las comunidades ecológicas. En esta descripción hemos usado una aproximación en la que la componente espacial no está presente de manera explícita. Aquí nos preguntamos, ¿es posible generar un mapa que muestre cómo se distribuye la diversidad en una zona concreta del planeta? En caso afirmativo, ¿cómo podríamos hacerlo?
+
+--- Contribuciones de los estudiantes ---
+
+
+
+## Una propuesta para generar un mapa de diversidad usando información de GBIF
 
 Para cuantificar la diversidad biológica se pueden utilizar muchos índices. En nuestro caso usaremos el denominado índice de Shannon-Wiever, que es uno de los más robustos y comunmente utilizados. Para su cálculo se necesita la siguiente información:
 
@@ -38,15 +56,13 @@ Para cuantificar la diversidad biológica se pueden utilizar muchos índices. En
 + Listado de especies existente en esa comunidad.
 + Abundancia de cada especie en dicha comunidad.
 
-La siguiente presentación muestra los conceptos básicos necesarios para hacer la práctica. También puedes verla [aquí](https://prezi.com/view/07Hx3W5wMEZBtpdeeouO/) y descargarla [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/2024-2025/presentacion/1_Geoforest_introduccion_biodiversidad.exe.zip) para Windows y [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/2024-2025/presentacion/1_Geoforest_introduccion_biodiversidad.zip) para Mac. Y [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/2024-2025/presentacion/1_Geoforest_introduccion_biodiversidad.pdf) la tienes en formato pdf.
+La siguiente presentación muestra de forma muy sencilla en qué consiste este método.
 
 
 
+<iframe src="https://prezi.com/p/embed/jLHzHdM6BpTgCUa4WaUt/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="415" width="738"></iframe>
 
-<p><iframe src="https://prezi.com/view/07Hx3W5wMEZBtpdeeouO/embed" width="1200" height="900"> </iframe></p>
-
-
-Para satisfacer los objetivos planteados, procederemos de la siguiente forma:
++ Para satisfacer los objetivos planteados, procederemos de la siguiente forma:
 
 1. En primer lugar aprenderemos la mecánica del cálculo del mapa de diversidad a una escala de 250 m en el espacio protegido de Sierra Nevada (Sur de España). Es decir, asumiremos que una comunidad ecológica es una entidad de forma cuadrangular con un lado de 250 m. Esto no es así en la realidad, pero es la aproximación más fácil que tenemos a nuestro alcance. Una vez obtenido este mapa, trataremos de estudiar los patrones de cambio espacial de dicha diversidad. También identificaremos los factores abióticos que explican dichos patrones espaciales.
 2. Las técnicas de análisis aprendidas en el primer punto deberán ser aplicadas a la actividad entregable de esta asignatura. Es decir, será necesario incluir un mapa de biodiversidad como elemento para realizar la estratificación del territorio. En esta práctica trabajaremos con Sierra Nevada porque es un territorio grande que ofrece interesantes oportunidades para interpretar patrones de cambio de la diversidad en el territorio. Pero el ejercicio a entregar se desarrolla en otro lugar. Tendréis que transferir lo aprendido esta práctica a ese otro territorio
