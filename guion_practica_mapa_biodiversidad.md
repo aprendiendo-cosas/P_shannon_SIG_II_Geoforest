@@ -182,7 +182,11 @@ Si hacemos un poco de zoom en el sureste de Andalucía, observamos algo así:
 
 
 
-## Patrones espaciales de diversidad 
+## Patrones espaciales de diversidad a escala global
+
+¿Podemos ver patrones de diversidad a escala mayor que la analizada anteriormente?
+
+En esta capa vectorial se muestran varias zonas localizadas en la parte occidental del continente americano. Desde Alaska hasta casi el Ecuador. En cada una de esas zonas se ha generado un mapa de diversidad parecido al que hemos creado para Sierra Nevada. La diferencia es que se ha calculado el promedio de la diversidad de todas las cuadrículas de 250m de cada zona. Eso explica por qué cada polígono tiene un único valor del índice Shannon. Descarga la capa y representála en un SIG. Puedes ponerle de fondo una imagen de satélite usando. 
 
 
 
