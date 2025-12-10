@@ -220,6 +220,10 @@ Comparemos este mapa con el primero que hemos hecho: el mapa del índice de Shan
 
 ¿Qué diferencias observamos entre ambos mapas?
 
+Podemos comparar la diversidad promedio de las comunidades de cada espacio protegido con el índice de Shannon que recibe dicho espacio si lo calculamos a escala de paisaje. Los resultados se pueden ver en la siguiente tabla:
+
+![tabla_diversidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/tabla_diversidades.png)
+
 
 
 
