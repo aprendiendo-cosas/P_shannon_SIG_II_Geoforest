@@ -152,7 +152,7 @@ st_write(grid_250m_sf, "Shannon_250_sierra_nevada.shp", append=FALSE)
 
 
 
-## Identificación de patrones espaciales de la diversidad en Andalucía y en Sierra Nevada
+## Identificación de patrones espaciales de la diversidad en Sierra Nevada y en Andalucía
 
 El resultado de la sección anterior es un mapa que muestra la distribución de la diversidad en Sierra Nevada. Representémoslo en QGIS tal y como se observa en la siguiente imagen. ¿qué patrones espaciales podemos identificar?, ¿cómo se explican estos patrones espaciales?
 
@@ -168,39 +168,27 @@ El resultado de la sección anterior es un mapa que muestra la distribución de 
 
 También podemos generar un mapa parecido de toda Andalucía. Al utilizar millones de puntos de GBIF, se tardan varias horas en ejecutar el script anterior. Así que no lo haremos en clase. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/geoinfo/biodiv_250_andalucia.zip) puedes descargar un mapa del índice de Shannon de todas las cuadrículas de 250m de Andalucía. Dicho mapa tiene el siguiente aspecto:
 
-![Shannon_250_andalucia]((https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_Snevada_250_lowpass.png))
+![Shannon_250_andalucia](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_andalucia_250.png)
+
+¿Qué patrones espaciales podemos identificar en la imagen anterior? ¿A qué pueden deberse esos patrones?
+
+
+
+Si hacemos un poco de zoom en el sureste de Andalucía, observamos algo así:
+
+![Shannon_250_sureste](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_sureste_250_label.png)
+
+¿A qué se debe el patrón observado en la diversidad?
+
+
+
+## Patrones espaciales de diversidad 
 
 
 
 
 
-## Resultados esperables
 
-El siguiente mapa muestra el resultado obtenido en esta práctica. Se trata de un fichero de formas vectorial en el que se ha asignado el valor del índice Shannon a cada cuadrícula de la malla de 250 m. 
-
-
-![shannon](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/2024-2025/images/mapa_shannon.png)
-
-
-En el mapa resultante se pueden identificar varios patrones de distribución espacial de la biodiversidad en Sierra Nevada. Durante la práctica reflexionamos sobre dichos patrones:
-
-+ ¿Cómo cambia la diversidad al aumentar la altitud?
-
-+ ¿A qué se puede deber dicho patrón?
-
-+ ¿Crees que se repetiría el mismo patrón en otras montañas de la Tierra?
-
-+ ¿hay algún patrón de cambio de diversidad en dirección este-oeste?
-
-+ En caso afirmativo, ¿a qué puede deberse?
-
-
-
-
-
-## Vídeo de la sesión
-
-<iframe width="560" height="515" src="https://www.youtube.com/embed/DZaSvXDW1Kc?si=1Pz-g4pUfQkeJdlb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 
