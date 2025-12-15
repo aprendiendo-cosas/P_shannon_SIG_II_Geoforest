@@ -44,7 +44,52 @@ Usaremos la siguiente presentación para explicar estos conceptos y para generar
 
 En la sección anterior hemos aprendido que la diversidad es un descriptor de las comunidades ecológicas. En esta descripción hemos usado una aproximación en la que la componente espacial no está presente de manera explícita. Aquí nos preguntamos, ¿es posible generar un mapa que muestre cómo se distribuye la diversidad en una zona concreta del planeta? En caso afirmativo, ¿cómo podríamos hacerlo?
 
---- Contribuciones de los estudiantes ---
+
+
+**Sabios comentarios de los estudiantes**
+
+1. Necesitamos separar el territorio "por píxeles" de, no sé, 1 km x 1 km. En cada celda calculamos el índice de Shannon según las especies y la abundancia que haya en ese píxel. 
+
+2. Podríamos hacer algo parecido, pero en lugar de con píxeles tan grandes, quizás podemos hacer una aproximación por comunidades. Una clasificación que no sabemos bien cómo. Y luego calcular el índice de Shannon para cada una de esas comunidades o divisiones que hagamos.
+
+3. Primero definiría un espacio de trabajo que no fuera infinito. Para dar un marco. Luego tomaría muestras de especies para terminar realizando una clasificación por píxel.
+
+4. Podemos usar diferentes fuentes de datos, observaciones de campo.
+
+5. Si una especie concreta tiene mucha frondosidad que otra especie, podemos clasificarlas usando NDVI. Por ejemplo, en la Amazonía hay muchos árboles, plantaciones, etc. Dependiendo de las imágenes satelitales podemos identificar si es una especie u otra.
+
+6. Principio de ventanas móviles. De esta forma calculamos el individuo que hay en el píxel central en contraste con lo que hay alrededor. 
+
+7. Teniendo en cuenta que conforme vamos al norte, baja la diversidad, cargaría una serie de variables abióticas (temp, radiación, etc.) y haría un modelo para todo el planeta. 
+
+
+
+**Estructura**
+
+
+
+- Método de asignación espacial de diversidad a una cuadrícula (1, 2, 3, 4). Implica disponer de datos reales de diversidad y asignarlos a un ámbito espacial determinado.
+  - Aquí tenemos dos problemas:
+    - Datos observacionales de diversidad.
+    - Elección de una escala espacial de trabajo:
+      - Mallas de distinto tamaño.
+      - Polígonos quizás de un mapa de vegetación o de los hábitats. 
+- Método de creación de mapa de diversidad a partir de variables subrogadas. (5). El NDVI puede ser un buen subrogado de la diversidad biológica. 
+  - Debate sobre si es más fácil obtener un mapa de humedad del suelo que uno de precipitación.
+    - Un mapa de humedad se obtiene a partir de un MDE. Para obtener un mapa de precipitación necesitamos muchas estaciones meteorológicas. 
+    - Medir lo que llueve es fácil. Tener valores de precipitación en sitios donde no hay estaciones, es difícil.
+- Inferencia de la diversidad en función de varias variables explicativas. Crear un modelo (estadístico o conceptual) que relacione la variable dependiente (diversidad)  con las independientes.
+  - correlación estadística. 
+  - Evaluación multicriterio. la relación entre las variables se determina en función de conocimiento experto. Ej. sabemos que cuanto más llueve más grandes son los árboles. Sabemos que la precipitación es más importante que la temperatura para explicar el crecimiento de las plantas.
+
+
+
+**Jugando con las IAs**
+
++ Preguntamos a perplexity lo siguiente:
+  + [¿cómo hago un mapa de diversidad?](https://www.perplexity.ai/search/como-hago-un-mapa-de-diversida-CORLvnU5Qnyflxhzkmj0TQ#0)
+  + [¿qué variables subrogadas te permiten contener más variables en una sola para generar un mapa de diversidad?](https://www.perplexity.ai/search/que-variables-subrogadas-te-pe-gfBNFCtJSOK2LpHsMtPjsA#0)
+  + [¿qué metodologías se están utilizando para generar un mapa de diversidad?](https://www.perplexity.ai/search/que-metodologias-se-estan-util-PPQIjluWSpu6U90A9pLXrA#0)
 
 
 
@@ -228,11 +273,51 @@ Podemos comparar la diversidad promedio de las comunidades de cada espacio prote
 
 Observamos cómo los espacios protegidos que tienen valores altos de diversidad a escala de paisaje (shannon calculado con el límite del espacio protegido), tienen valores promedios bajos de diversidad a escala de 250 m. Y viceversa. ¿Qué clase de brujería es esta?
 
+
+
+MAUP: modifiable area unit problem
+
+
+
+esquema pizarra con las dos zonas de trabajo: heterogenea y homogénea
+
+
+
+
+
 Quizás esta presentación nos ayude a entender un poco esto:
 
 
 
 <iframe src="https://prezi.com/p/embed/hlzq3rFR88R4Vs84CVly/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="415" width="738"></iframe>
+
+las dos diversidades anteriores nos dan pie a estudiar cómo cambia la diversiadd en el paisaje
+
+
+
+diversidad beta como ejemplo de variable regionalizada
+
+
+
+quíe otras regionalizadas hay?
+
+
+
+pendiente...
+
+
+
+flujo y acúmulo de agua. esto nos da pie a estudiar el concepto de anisotropía.
+
+
+
+
+
+
+
+## Cómo generar un mapa de diversidad beta
+
+
 
 
 
@@ -250,3 +335,4 @@ Haz click [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geofores
  <p xmlns:cc="http://creativecommons.org/ns#" >El contenido de este repositorio se puede utilizar bajo la siguiente licencia:  <a  href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"  target="_blank" rel="license noopener noreferrer"  style="display:inline-block;">CC BY-NC-SA 4.0<img  style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"   src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"  alt=""><img  style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"   src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"  alt=""><img  style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"   src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"  alt=""><img  style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"   src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"  alt=""></a></p> 
 
 <p>Esta licencia no aplica a enlaces a artículos, libros o imágenes no originales. Estos productos tienen su licencia correspondiente.</p>
+
