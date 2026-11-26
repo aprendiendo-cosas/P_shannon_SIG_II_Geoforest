@@ -203,7 +203,7 @@ El resultado de la sección anterior es un mapa que muestra la distribución de 
 
 
 
-![Sierra_nevada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/2024-2025/images/shannon_Snevada_250.png)
+![Sierra_nevada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/2025_2026/images/shannon_Snevada_250.png)
 
 ¿En qué se diferencia esta imagen a la anterior?
 
