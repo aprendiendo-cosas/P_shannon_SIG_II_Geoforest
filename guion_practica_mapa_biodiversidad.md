@@ -107,19 +107,19 @@ La siguiente presentación muestra de forma muy sencilla en qué consiste este m
 
 <iframe src="https://prezi.com/p/embed/jLHzHdM6BpTgCUa4WaUt/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="415" width="738"></iframe>
 
-
+Esta presentación se puede descargar [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/presentacion/1_Geoforest_introduccion_biodiversidad.exe.zip) para Windows, [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/presentacion/1_Geoforest_introduccion_biodiversidad.zip) para Mac y [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/presentacion/1_Geoforest_introduccion_biodiversidad.pdf) en formato pdf. 
 
 Como se puede observar en la presentación anterior, para calcular la diversidad de una comunidad, usaremos dos fuentes de información:
-+ Información de distribución de especies en la zona de estudio (Sierra Nevada). Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada [GBIF](https://www.gbif.org/) (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/2025_2026/geoinfo/csv_gbif_sierra_nevada.zip) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada. Como ves más abajo, son unos cuantos miles de puntos...
++ Información de distribución de especies en la zona de estudio (Sierra Nevada). Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada [GBIF](https://www.gbif.org/) (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/geoinfo/csv_gbif_sierra_nevada.zip) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada. Como ves más abajo, son unos cuantos miles de puntos...
 
-![puntos](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/2025_2026/images/puntos.png)
+![puntos](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/puntos.png)
 
 
 + Distribución de las comunidades ecológicas que conforman Sierra Nevada. Este paso es el más complejo conceptualmente, ya que las comunidades no tienen un límite espacial preciso. Es decir, están conectadas entre sí y no es fácil delimitar donde empieza una y acaba otra. En este caso usaremos una definición artificial y arbitraria de comunidad: un cuadrado de 250 m de lado. En el ejercicio que tendrás que hacer para evaluar tu aprendizaje, habrá disponible una fuente de información menos arbitraria: los polígonos de un mapa de vegetación. 
 
 A partir de estas dos fuentes de datos obtendremos el índice de Shannon para cada una de las comunidades de Sierra Nevada. Es decir, usaremos los datos de presencia de cada especie que hay en cada una de las comunidades para calcular su índice de Shannon. En la siguiente figura puedes ver la distribución de presencias de especies en unas cuantas comunidades.
 
-![puntos_comunidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/2025_2026/images/grid.png)
+![puntos_comunidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/grid.png)
 
 Para ello seguiremos los pasos que se muestran en el siguiente flujo de trabajo (se ve un poco pequeño, pero si vas a la parte de abajo encontrarás una herramienta lupa para aumentar y otra para desplazarte). También puedes descargar el flujo de trabajo [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/presentacion/sierra_nevada_shannon_R.drawio.zip) (se abre con [esta](https://www.diagrams.net/) aplicación).
 
@@ -203,17 +203,17 @@ El resultado de la sección anterior es un mapa que muestra la distribución de 
 
 
 
-![Sierra_nevada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/2025_2026/images/shannon_Snevada_250.png)
+![Sierra_nevada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_Snevada_250.png)
 
 ¿En qué se diferencia esta imagen a la anterior?
 
 
 
-![Sierra_nevada_lowpass](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_Snevada_250_lowpass.png)
+![Sierra_nevada_lowpass](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_Snevada_250_lowpass.png)
 
-También podemos generar un mapa parecido de toda Andalucía. Al utilizar millones de puntos de GBIF, se tardan varias horas en ejecutar el script anterior. Así que no lo haremos en clase. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/geoinfo/biodiv_250_andalucia.zip) puedes descargar un mapa del índice de Shannon de todas las cuadrículas de 250m de Andalucía. Dicho mapa tiene el siguiente aspecto:
+También podemos generar un mapa parecido de toda Andalucía. Al utilizar millones de puntos de GBIF, se tardan varias horas en ejecutar el script anterior. Así que no lo haremos en clase. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/geoinfo/biodiv_250_andalucia.zip) puedes descargar un mapa del índice de Shannon de todas las cuadrículas de 250m de Andalucía. Dicho mapa tiene el siguiente aspecto:
 
-![Shannon_250_andalucia](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_andalucia_250.png)
+![Shannon_250_andalucia](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_andalucia_250.png)
 
 ¿Qué patrones espaciales podemos identificar en la imagen anterior? ¿A qué pueden deberse esos patrones?
 
@@ -221,7 +221,7 @@ También podemos generar un mapa parecido de toda Andalucía. Al utilizar millon
 
 Si hacemos un poco de zoom en el sureste de Andalucía, observamos algo así:
 
-![Shannon_250_sureste](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_sureste_250_label.png)
+![Shannon_250_sureste](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_sureste_250_label.png)
 
 ¿A qué se debe el patrón observado en la diversidad?
 
@@ -231,9 +231,9 @@ Si hacemos un poco de zoom en el sureste de Andalucía, observamos algo así:
 
 ¿Podemos ver patrones de diversidad a escala mayor que la analizada anteriormente?
 
-En [esta](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/geoinfo/zonas_gradiente_latitudinal.zip) capa vectorial se muestran varias zonas localizadas en la parte occidental del continente americano. Desde Alaska hasta casi el Ecuador. En cada una de esas zonas se ha generado un mapa de diversidad parecido al que hemos creado para Sierra Nevada. La diferencia es que se ha calculado el promedio de la diversidad de todas las cuadrículas de 250m de cada zona. Eso explica por qué cada polígono tiene un único valor del índice Shannon. Descarga la capa y representála en un SIG. Puedes ponerle de fondo una imagen de satélite usando un plugin llamado *quickmapservices*. El resultado debería de ser parecido a esta imagen:
+En [esta](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/geoinfo/zonas_gradiente_latitudinal.zip) capa vectorial se muestran varias zonas localizadas en la parte occidental del continente americano. Desde Alaska hasta casi el Ecuador. En cada una de esas zonas se ha generado un mapa de diversidad parecido al que hemos creado para Sierra Nevada. La diferencia es que se ha calculado el promedio de la diversidad de todas las cuadrículas de 250m de cada zona. Eso explica por qué cada polígono tiene un único valor del índice Shannon. Descarga la capa y representála en un SIG. Puedes ponerle de fondo una imagen de satélite usando un plugin llamado *quickmapservices*. El resultado debería de ser parecido a esta imagen:
 
-![gradiente_lat](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/gradiente_latitud.png)
+![gradiente_lat](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/gradiente_latitud.png)
 
 ¿Se puede identificar algún patrón espacial? En caso afirmativo, ¿a qué se debe? ¿en qué se parece este patrón a alguno de los observados anteriormente?
 
@@ -247,27 +247,27 @@ Las siguientes tres imágenes muestran el resultado de este experimento con tama
 
 
 
-![Shannon_andalucia_500](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_andalucia_500.png)
+![Shannon_andalucia_500](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_andalucia_500.png)
 
-![Shannon_andalucia_1000](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_andalucia_1000.png)
+![Shannon_andalucia_1000](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_andalucia_1000.png)
 
-![Shannon_andalucia_10000](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_andalucia_10000.png)
+![Shannon_andalucia_10000](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_andalucia_10000.png)
 
 ¿En qué se diferencian estas imágenes? ¿Han cambiado los patrones espaciales? ¿Qué quiere decir esto?
 
 Ahora daremos un nuevo paso en este proceso de cambiar la escala de cálculo del índice de Shannon. Calculemos ahora el mismo índice considerando que los espacios naturales protegidos de Andalucía son comunidades. Es decir, calculemos el índice de Shannon de los espacios protegidos. La siguiente imagen muestra el resultado de esto:
 
-![Shannon_natura](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_natura.png)
+![Shannon_natura](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_natura.png)
 
 Comparemos este mapa con el primero que hemos hecho: el mapa del índice de Shannon a 250m:
 
-![Shannon_250_andalucia](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/shannon_andalucia_250.png)
+![Shannon_250_andalucia](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_andalucia_250.png)
 
 ¿Qué diferencias observamos entre ambos mapas?
 
 Podemos comparar la diversidad promedio de las comunidades de cada espacio protegido con el índice de Shannon que recibe dicho espacio si lo calculamos a escala de paisaje. Los resultados se pueden ver en la siguiente tabla:
 
-![tabla_diversidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/tabla_diversidades.jpg)
+![tabla_diversidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/tabla_diversidades.jpg)
 
 ¿¿¿¿ Qué está pasando aquí ???
 
@@ -326,7 +326,7 @@ flujo y acúmulo de agua. esto nos da pie a estudiar el concepto de anisotropía
 
 ****
 
-[Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/archive/refs/tags/2024_2025.zip) puedes descargar un archivo .zip que contiene este guión en formato html y todo el material que incluye.
+[Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/archive/refs/tags/2025_2026.zip) puedes descargar un archivo .zip que contiene este guión en formato html y todo el material que incluye.
 
 ****
 Haz click [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/releases) para ver cómo ha cambiado este guión en los distintos cursos académicos.
