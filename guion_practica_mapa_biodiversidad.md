@@ -5,9 +5,9 @@
 > + **_Versión_**: 2026-2027 
 > + **_Asignatura_** : SIG II (Máster GEOFOREST). 
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
-> + **_Duración_**: 4 horas.
+> + **_Duración_**: 6 horas.
 
-![portada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/portada.jpg)
+##### ![portada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/images/portada.jpg)
 
 
 
@@ -58,13 +58,24 @@ Esta presentación se puede descargar [aquí](https://github.com/aprendiendo-cos
 
 En la sección anterior hemos aprendido que la diversidad es un descriptor de las comunidades ecológicas. En esta descripción hemos usado una aproximación en la que la componente espacial no está presente de manera explícita. 
 
+¿Cómo podemos generar un mapa de diversidad? Nos hemos preguntado esto en clase. Cada estudiante ha conversado un rato con una IA para tratar de aprender cómo hacer esto. De manera muy resumida, hemos obtenido las siguientes ideas:
+
+- La IA no recomienda usar una base de datos global como GBIF por varias razones:
+  - Los datos de GBIF no están bien espacializados. Muchos de ellos tienen distorsiones deliberadas en la georreferenciación para proteger a las poblaciones de especies amenazadas.
+  - En otras ocasiones, la georreferenciación se refiere a datos con una resolución espacial muy alta.
+  - Los datos de GBIF no responden a un muestreo exhaustivo y constante en el territorio. Hay zonas mucho más muestreadas que otras. Eso implica que el mapa resultante heredaría ese sesgo de muestreo.
+  - Los datos de GBIF no muestran abundancia de especies sino datos de presencia de individuos. Emular la abundancia contando cuántos individuos de cada especie hay en un recinto espacial dado, es incorrecto.
+- En las conversaciones indicamos que usaremos una malla regular de unos 250 m para emular la delimitación de una comunidad ecológica. Esto tampoco gusta a la IA por las siguientes razones:
+  - La diversidad es un concepto cuyo significado cambia con la escala. Esto se aplica a los distintos taxones biológicos. La diversidad de una fracción del suelo, por ejemplo, debe de medirse a una escala diferente que la que usamos en un bosque. Usar una escala constante para todos los grupos taxonómicos es un error conceptual.
+
+Aunque la IA critica nuestra aproximación, acordamos probar con nuestro planteamiento inicial (GBIF y cuadrícula de 250 m) por lo siguiente:
+
+- La zona en la que trabajaremos tiene muchos puntos de presencia de especies. Esto elimina o reduce, en teoría, el sesgo de muestreo. Casi todo el territorio está muy muestreado.
+- La georreferenciación de los puntos de presencia es relativamente buena por la msima razón anterior: hay mucha experiencia muestreando este territorio.
+
+Acordamos con la IA (gemini en este caso) compartir con ella los resultados obtenidos para contrastar si nuestra decisión es adecuada o no. [Aquí](https://share.gemini.google/ym940Wq1H17p) está disponible la conversación que mantuve con la IA sobre esto. Si la lees, verás cómo sugiere posibles errores y sesgos de nuestros resultados. Sería interesante analizar estas sugerencias. 
 
 
-Aquí nos preguntamos, ¿es posible generar un mapa que muestre cómo se distribuye la diversidad en una zona concreta del planeta? 
-
-
-
-En caso afirmativo, ¿cómo podríamos hacerlo?
 
 
 
@@ -309,6 +320,10 @@ Quizás esta presentación nos ayude a entender un poco esto:
 
 ****
 Haz click [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/releases) para ver cómo ha cambiado este guión en los distintos cursos académicos.
+
+---
+
+[Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/blob/2026_2027/notas_imparticion_P_shannon_SIG_II_Geoforest.md) puedes ver las notas que tomó el profesor una vez que se impartió la clase.
 
 ****
  <p xmlns:cc="http://creativecommons.org/ns#" >El contenido de este repositorio se puede utilizar bajo la siguiente licencia:  <a  href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"  target="_blank" rel="license noopener noreferrer"  style="display:inline-block;">CC BY-NC-SA 4.0<img  style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"   src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"  alt=""><img  style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"   src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"  alt=""><img  style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"   src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"  alt=""><img  style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"   src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"  alt=""></a></p> 
