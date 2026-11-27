@@ -7,7 +7,7 @@
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
 > + **_Duración_**: 4 horas.
 
-NOTA IMPORTANTE: Aunque se ha dado por definitivo este acto docente para el curso 25-26, su contenido no está bien elaborado. Dejé pasar mucho tiempo entre la impartición y la preparación del material. Tanto que llegó el nuevo curso. Por eso en este texto hay comentarios y material incompleto.
+![portada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/imagenes/portada.jpg)
 
 ## Objetivos
 
