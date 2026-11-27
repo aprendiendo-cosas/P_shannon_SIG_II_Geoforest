@@ -2,14 +2,20 @@
 
 
 > + **_Tipo de material_**: <span style="display: inline-block; font-size: 12px; color: white; background-color: #029BF9; border-radius: 5px; padding: 5px; font-weight: bold;"> Teoría</span> <span style="display: inline-block; font-size: 12px; color: white; background-color: #4caf50; border-radius: 5px; padding: 5px; font-weight: bold;"> Prácticas</span> 
-> + **_Versión_**: 2025-2026 
+> + **_Versión_**: 2026-2027 
 > + **_Asignatura_** : SIG II (Máster GEOFOREST). 
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
 > + **_Duración_**: 4 horas.
 
 ![portada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/main/imagenes/portada.jpg)
 
-## Objetivos
+
+
+[TOC]
+
+
+
+## 1. Objetivos
 
 Esta sesión tiene los siguientes objetivos:
 
@@ -30,70 +36,39 @@ Esta sesión tiene los siguientes objetivos:
 
 
 
-## El concepto de diversidad biológica
+Estos objetivos se abordarán de manera casi simultanea durante la sesión. Se manifiestan como planos o dimensiones diferentes. El plano más evidente, es el temático. Implica mejorar nuestra comprensión de un concepto muy relevante en ecología: la diversidad. El seguno plano implica proyectar ese concepto teórico en el espacio. Analizaremos cómo se distribuye la diversidad biológica en el territorio. La tercera dimensión nos llevará a analizar los patrones espaciales que surgen cuando observamos la distribución espacial de la diversidad. También estudiaremos cómo podrían cambiar esos patrones si lo hacen las fuerzas que los generan (clima, fundamentalmente). Después, en otro plano o dimensión, cambiaremos la escala y mediremos la diversidad con las mismas herramientas matemáticas pero a otra escala espacial. Esto nos permitirá inferir la necesidad de ampliar la definición de diversidad biológica. La última dimensión es la instrumental. Se refiere a las herramientas digitales que usaremos en la sesión. Aquí hay dos herramientas. La primera es R. La segunda es la IA generativa. 
+
+
+
+## 2. La teoría: El concepto de diversidad biológica
 
 Para maximizar el aprendizaje en esta sesión es importante que tengamos claro en qué consiste la diversidad biológica. La diversidad es un atributo de las comunidades ecológicas. En esta sección analizaremos también cuáles son las variables que explican los cambios de diversidad que observamos en el territorio.
 
 Usaremos la siguiente presentación para explicar estos conceptos y para generar un punto de partida común entre todos los estudiantes.
 
-<iframe src="https://prezi.com/p/embed/JwRiniBpVzC8DmGcVp9q/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="415" width="560"></iframe>
+<iframe src="https://prezi.com/p/embed/eqpamiFSqaEAshSvUFAg/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="415" width="560"></iframe>
+
+Esta presentación se puede descargar [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/presentacion/0_introduccion_diversidad.exe.zip) para Windows, [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/presentacion/0_introduccion_diversidad.zip) para Mac y [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/presentacion/10_introduccion_diversidad.exe.pdf) en formato pdf. 
 
 
 
-## Generación de un mapa continuo de diversidad biológica
-
-En la sección anterior hemos aprendido que la diversidad es un descriptor de las comunidades ecológicas. En esta descripción hemos usado una aproximación en la que la componente espacial no está presente de manera explícita. Aquí nos preguntamos, ¿es posible generar un mapa que muestre cómo se distribuye la diversidad en una zona concreta del planeta? En caso afirmativo, ¿cómo podríamos hacerlo?
 
 
+## 3. Proyectar la teoría al espacio (y un poco al tiempo): Generación de un mapa continuo de diversidad biológica
 
-**Sabios comentarios de los estudiantes**
-
-1. Necesitamos separar el territorio "por píxeles" de, no sé, 1 km x 1 km. En cada celda calculamos el índice de Shannon según las especies y la abundancia que haya en ese píxel. 
-
-2. Podríamos hacer algo parecido, pero en lugar de con píxeles tan grandes, quizás podemos hacer una aproximación por comunidades. Una clasificación que no sabemos bien cómo. Y luego calcular el índice de Shannon para cada una de esas comunidades o divisiones que hagamos.
-
-3. Primero definiría un espacio de trabajo que no fuera infinito. Para dar un marco. Luego tomaría muestras de especies para terminar realizando una clasificación por píxel.
-
-4. Podemos usar diferentes fuentes de datos, observaciones de campo.
-
-5. Si una especie concreta tiene mucha frondosidad que otra especie, podemos clasificarlas usando NDVI. Por ejemplo, en la Amazonía hay muchos árboles, plantaciones, etc. Dependiendo de las imágenes satelitales podemos identificar si es una especie u otra.
-
-6. Principio de ventanas móviles. De esta forma calculamos el individuo que hay en el píxel central en contraste con lo que hay alrededor. 
-
-7. Teniendo en cuenta que conforme vamos al norte, baja la diversidad, cargaría una serie de variables abióticas (temp, radiación, etc.) y haría un modelo para todo el planeta. 
+En la sección anterior hemos aprendido que la diversidad es un descriptor de las comunidades ecológicas. En esta descripción hemos usado una aproximación en la que la componente espacial no está presente de manera explícita. 
 
 
 
-**Estructura**
+Aquí nos preguntamos, ¿es posible generar un mapa que muestre cómo se distribuye la diversidad en una zona concreta del planeta? 
 
 
 
-- Método de asignación espacial de diversidad a una cuadrícula (1, 2, 3, 4). Implica disponer de datos reales de diversidad y asignarlos a un ámbito espacial determinado.
-  - Aquí tenemos dos problemas:
-    - Datos observacionales de diversidad.
-    - Elección de una escala espacial de trabajo:
-      - Mallas de distinto tamaño.
-      - Polígonos quizás de un mapa de vegetación o de los hábitats. 
-- Método de creación de mapa de diversidad a partir de variables subrogadas. (5). El NDVI puede ser un buen subrogado de la diversidad biológica. 
-  - Debate sobre si es más fácil obtener un mapa de humedad del suelo que uno de precipitación.
-    - Un mapa de humedad se obtiene a partir de un MDE. Para obtener un mapa de precipitación necesitamos muchas estaciones meteorológicas. 
-    - Medir lo que llueve es fácil. Tener valores de precipitación en sitios donde no hay estaciones, es difícil.
-- Inferencia de la diversidad en función de varias variables explicativas. Crear un modelo (estadístico o conceptual) que relacione la variable dependiente (diversidad)  con las independientes.
-  - correlación estadística. 
-  - Evaluación multicriterio. la relación entre las variables se determina en función de conocimiento experto. Ej. sabemos que cuanto más llueve más grandes son los árboles. Sabemos que la precipitación es más importante que la temperatura para explicar el crecimiento de las plantas.
+En caso afirmativo, ¿cómo podríamos hacerlo?
 
 
 
-**Jugando con las IAs**
-
-+ Preguntamos a perplexity lo siguiente:
-  + [¿cómo hago un mapa de diversidad?](https://www.perplexity.ai/search/como-hago-un-mapa-de-diversida-CORLvnU5Qnyflxhzkmj0TQ#0)
-  + [¿qué variables subrogadas te permiten contener más variables en una sola para generar un mapa de diversidad?](https://www.perplexity.ai/search/que-variables-subrogadas-te-pe-gfBNFCtJSOK2LpHsMtPjsA#0)
-  + [¿qué metodologías se están utilizando para generar un mapa de diversidad?](https://www.perplexity.ai/search/que-metodologias-se-estan-util-PPQIjluWSpu6U90A9pLXrA#0)
-
-
-
-## Una propuesta para generar un mapa de diversidad usando información de GBIF
+### 3.1 Una propuesta para generar un mapa de diversidad usando información de GBIF
 
 Para cuantificar la diversidad biológica se pueden utilizar muchos índices. En nuestro caso usaremos el denominado índice de Shannon-Wiever, que es uno de los más robustos y comunmente utilizados. Para su cálculo se necesita la siguiente información:
 
@@ -107,28 +82,28 @@ La siguiente presentación muestra de forma muy sencilla en qué consiste este m
 
 <iframe src="https://prezi.com/p/embed/jLHzHdM6BpTgCUa4WaUt/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="415" width="738"></iframe>
 
-Esta presentación se puede descargar [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/presentacion/1_Geoforest_introduccion_biodiversidad.exe.zip) para Windows, [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/presentacion/1_Geoforest_introduccion_biodiversidad.zip) para Mac y [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/presentacion/1_Geoforest_introduccion_biodiversidad.pdf) en formato pdf. 
+Esta presentación se puede descargar [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/presentacion/1_mapa_diversidad.exe.zip) para Windows, [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/presentacion/1_mapa_diversidad.zip) para Mac y [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/presentacion/1_mapa_diversidad.pdf) en formato pdf. 
 
 Como se puede observar en la presentación anterior, para calcular la diversidad de una comunidad, usaremos dos fuentes de información:
-+ Información de distribución de especies en la zona de estudio (Sierra Nevada). Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada [GBIF](https://www.gbif.org/) (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/geoinfo/csv_gbif_sierra_nevada.zip) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada. Como ves más abajo, son unos cuantos miles de puntos...
++ Información de distribución de especies en la zona de estudio (Sierra Nevada). Es el primer paso fundamental porque necesitamos esta información para calcular el índice de Shannon. Para conseguir datos de presencia de especies en Sierra Nevada usaremos una infraestructura digital denominada [GBIF](https://www.gbif.org/) (Global Biodiversity Information Facility). Se trata de un portal desde el que se tiene acceso a millones de datos de presencia de especies procedentes de colecciones biológicas (herbarios, colecciones animales, etc.) de todo el planeta. Esta iniciativa está promovida y mantenida por multitud de países que han puesto en común toda la información de la que disponen para conocer mejor la distribución de la biodiversidad en la Tierra. Accederemos a este portal y descargaremos toda la información de presencia de especies en Sierra Nevada. Esto nos dará una idea bastante aproximada de cómo se distribuye la diversida en esta zona. En nuestro caso, GBIF aporta una enorme cantidad de registros de presencia de especies en Sierra Nevada. Durante la práctica visitamos el portal de GBIF y simulamos la descarga. Como este proceso puede tardar unas horas, utilizamos datos que fueron descargados anteriormente por el profesor. Dichos datos de presencia de especies tienen el siguiente "aspecto" cuando son visualizados en QGIS. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/geoinfo/csv_gbif_sierra_nevada.zip) puedes descargar la capa con los datos de presencia de especies de Sierra Nevada. Como ves más abajo, son unos cuantos miles de puntos...
 
-![puntos](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/puntos.png)
+![puntos](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/heads/main/images/puntos.png)
 
 
 + Distribución de las comunidades ecológicas que conforman Sierra Nevada. Este paso es el más complejo conceptualmente, ya que las comunidades no tienen un límite espacial preciso. Es decir, están conectadas entre sí y no es fácil delimitar donde empieza una y acaba otra. En este caso usaremos una definición artificial y arbitraria de comunidad: un cuadrado de 250 m de lado. En el ejercicio que tendrás que hacer para evaluar tu aprendizaje, habrá disponible una fuente de información menos arbitraria: los polígonos de un mapa de vegetación. 
 
 A partir de estas dos fuentes de datos obtendremos el índice de Shannon para cada una de las comunidades de Sierra Nevada. Es decir, usaremos los datos de presencia de cada especie que hay en cada una de las comunidades para calcular su índice de Shannon. En la siguiente figura puedes ver la distribución de presencias de especies en unas cuantas comunidades.
 
-![puntos_comunidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/grid.png)
+![puntos_comunidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/heads/main/images/grid.png)
 
-Para ello seguiremos los pasos que se muestran en el siguiente flujo de trabajo (se ve un poco pequeño, pero si vas a la parte de abajo encontrarás una herramienta lupa para aumentar y otra para desplazarte). También puedes descargar el flujo de trabajo [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/presentacion/sierra_nevada_shannon_R.drawio.zip) (se abre con [esta](https://www.diagrams.net/) aplicación).
+Para ello seguiremos los pasos que se muestran en el siguiente flujo de trabajo (se ve un poco pequeño, pero si vas a la parte de abajo encontrarás una herramienta lupa para aumentar y otra para desplazarte). También puedes descargar el flujo de trabajo [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/presentacion/sierra_nevada_shannon_R.drawio.zip) (se abre con [esta](https://www.diagrams.net/) aplicación).
 
 
 
 <iframe frameborder="0" style="width:100%;height:3090px;" src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=sierra_nevada_shannon_QGIS_R.drawio#R7V3rc9s2Ev9rNNPejDV8Pz7Gip32Jr1L4ra59IsGJiGJDUUoJGXL%2FesPAAm%2BAFG0xJcleTy2CFIguLu%2F3cUCu5yos%2FXuQwg2q9%2BQC%2F2JIrm7ifp%2Boig3sqTgf6TlJWkxlLRhGXpu0iTlDQ%2FePzBplFnr1nNhlLYlTTFCfuxtyo0OCgLoxKU2EIbouXzZAvluqWEDlrA0DNLw4AAfcpd99dx4lbRaipm3%2FwK95YrdWTbs5MwjcL4vQ7QN0vtNFPVev9fu0w7XgPWV3jdaARc9F5rUu4k6CxGKk0%2Fr3Qz6hLZlst3vOZuNO4RB3OQLyj3Uvn%2FaWDfOnWp9%2BfD0%2BMfm%2FkZOmRXFL4wg0MX0SQ9RGK%2FQEgXAv8tbb%2BlDQ9KthI%2Fyaz4itMGNMm78G8bxS8pssI0RblrFaz89yw89fZoIbUMnHYcyX1j%2B84sR%2F%2FvH578s8%2BH225d%2FbvRUQkC4hHHNdSn3yLMUbpAS5gNEaxiHL%2FiCEPog9p7KsgBSkVpm1%2BVkxR9Syu6hcs2on4C%2FhUxYKlQH0SaR7oW3I6S93cDQw3eHIW7Dt8BwgJ%2FypiI1ge8tA%2FzZwdSk5zJJI%2BxxQbTKeBVtgOMFy98pn1Tc4K0pPNj%2F9956iZ%2FQ9x7xX%2BAQysxdL8QjQ4QM98%2FwcR7B8AmG0%2Bhpib%2B3QEGcstmkkhFjciIymhvZIndc4JH%2FmQ6UfP7lkAjgvmO4q2UaO6vJ6XdS1aMoKaGfcyCrKalXBQxrUgt8FqJJHQJNmILhy%2F%2FI96c6O%2FyWdkcP3u9KRy%2Fp0fEoNJuiUBkVDE0Ohu9h5OCHALj1w%2B2v9xz3whVaP27xOG6fV14MHzB8yJlnbArLPNiPg85BIJklEKiyzYGACXzrIBBS2Tis7Yjd3PB0ak6PzB8Aj6xPqZ5Oim2U6KTJBkcn7LzwhJKNrijFdFMdpbAu35CPmCixB%2Fwv5JGDJVUcBfETSWeZQFQMPd%2BfIR8RkxKggPQRUx1DTvpwEacfH1Eco3V6EKaUoMoJ82HhU9Oy8lwXBsSkxCH6Dlm32AmS6E8T5taLz2EIpJy0JI6RsipN7eKP2SMAVPXK1lPYys6qZes%2BNjZrvDnZy%2BaUXYd4G2GLysyIlPA6Bl5AfUCZHvs%2B2ERezntn5fnuR%2FCCtjG7DTs6YJM64xsjA7NHCq9mZWuqFn9kgdZVrK74ZnULzyqL3BBtfmeeEmnYII846ndPmPJRWximnVJS6bf4Fwv9jLiDOn6aGT6W82P8Sy4P4xkKMMqxfJE%2BIIjiZxjFRwtKBofDgvJKUejMH9RsThIeHA8%2FprfwnP%2BANexUbYu07sliUMC8dTwrrWNYadqvY13aWU7DV%2FcGfAyjAMTwlkyhIk4esnGeMHOXOBFxoYNny3h6Fiy9eOtehaSpYTD5iYlhtSkzTXrrQ2bkvTKD6XwVmVfNbk1OZsxXmogDeqZBb33ITMdTwatT0nAyyXj%2FWh9F6chH0fnJ5Dv80CD0wHQ6vVBFkqHldAelhm9HOCiV3vpQHBonH2TGNdOuotGyW3K0pDTprQ9J4VehzKl9FZO2XZHjNUqD3vqQkwbx%2B6sr0oMroqnHuSKdrWLzAc%2F7rXPJbkjz2OjZx0n4oCp1Qy7Wvrw6bH4x0RE%2B6Ir1yky%2BCso1JlImjcHHXq%2BOyBCOiKGNyxEx%2BADrJy%2FYRheqQjKcXN0Qtn%2Bn6IbIF%2ByGvEI0LswNMfi4KtZyM34D51VQLt0N4SOsVzdkCDfE4nd3D7o0Y%2FAB1c9bGDrb6HJDIhlYriszBh9HVclMV7%2BKxnVlpkwZPrBKYmftmplzFpSLWZsxrntXx%2BGLyBIvccPGRPiw6hcUXfDijHHdxJrt4ecDqSQr4nKjItetq%2FskhY%2BsEu1rXQXlGhURp%2FaWPBHDj1PSl6TF%2BLFF7MRNRJnyDl%2Bgb3b5OfxpSf5%2FCmEEA8cjKblko7QESWK8ByPyMcB%2FtgE59Q%2Bi%2FyLoQ8fBfAUuYLfHj5OMIOmQE91yvvWBvN79aXBUwNJe5aMl7Pj0qlc6HiwNq%2F2cd4Oj8GgqSIjGm9KhlLsuui6NBA%2BQul4z6gLaJFm2LEW5USTJkFXJ0mTNkjV16kRPp4n8cKnsKouoZeuOgpRPWeBTqZ0VdDCHEO5uCzrUCPtBULCkzPZQkX71E5kCFs2ook%2BVsjRYciUjNBlt%2Bs3TLFwNTQqQ%2B3VNpp4gJERmZipiZucxzC1O0uKxhhACN8HlvkvxAL39Bmv8RShUu1yEwlR45LKdLkXgsrb2gcu7rH0Ad%2BfFBdzio2%2BFMzlqycHpoGVgPIja3kDLUvQZYrUKYpNH6gyxGeXOXFs35bti96atjaq2tm17KhV%2BKu5nx7qbD5N6gYNCrL6p9k4faTJTJ%2B%2FegwYaPIrnIJpHi471dVESe9XeFUtr86VxDDnjcEmB61O9KxXOL5T1qsI1yyoocWlqm3qtIicHhQptr8B4XejhMMjbxvhp85RhKqD1a3ftpqxpnTe1%2BtfOfsuFc2RJUep0cddWeWAcNxeJ%2Fi05k5DD0QipP1EqC4%2BsD2nIGYEKljyEmxC9kOBo2MxyxyEIogUK15dhvWXJGIP5VoYJnaSwlydF011vuI%2BHL0PlYUtg9AVfU56qMofWDMwmJoZs5b%2B9WgIWg75agv0SctgSyONy%2BPhdbk4I6SxrDXw%2FW8ZRdGndTF2vwXc4p8XDz1Jd60bFO8Mml1PXliJU14aWNbfPSH7OXAxyVsheWP%2FFXIY%2BWoZgPSlXrS6dK9auPsQpUgE7ZZWAc63YTMsuMcESxCtNlWcAm960T31%2B%2B05O%2FTm%2BzblzgNisYVmgDTN17X%2Btp6nTwvTSSCyNyu9iKkNkrqgSu%2BiMgGLqU5bWlpkMgy8NITP89AIW9TqpP%2BihHXbltHEBjN%2F8RdyweeK6nReqdBZfZZBSWNXG4qRZUE66O0S9mRXLARClNUVU6%2FPs03jKpw6yYBRa0zkS3dKWryvVz4zOdf1JN9WpWQliqezNRIMGsVR%2Bi%2FR5%2BoSNow%2FDvVipbtwik0Xhcm5Wq4ISTZCGYhpTS7SbvLN50zC7Lt6G4RK9KUlIxNbXd07DFZ%2BRCMhuiVsZuB6xW44PnkhYb4PhQWrRNjFg8Me5mi%2BFM1%2BawQOzf%2FOl8VVg%2BzRfcglkOeb2wKzfVXztjYZBjEH22%2FevOkX8%2Bao%2B%2BH%2B6i%2FCvlxf03f5q3eo7LXtFw0j4o%2FFhqvN2SbSprZaVn66PwCsZZjrdJUyE0q8IpsbiCwebGteOuwCTux2eHMOQPsyjL3Ap6EIiiEPvEROeJITRBuRsw5AtUxEakjVHhOFDJ9gOIjNs6Iv641wUEE1dEIPpIqQv%2F%2Blvb34bSORWVCy2qFSEoTYVuCB5a%2Bs4ZIW2L3x2UAvJwy5I6xu5T8MuP%2Bt%2B9PgVymOzzix2mHaldIMXTSpnK8i2yq%2BqMPHtJdtMP79sM7H8CPY2Cy9sf9fjaXLPb5GYAd%2FZ%2BtTSBJOZMrklic1e4HpPnrtF4uQwsCayHzxG5N8Gke%2Fij0QOMTnpobMFbpqdQHpvYLkePn8U26ukLdqAoCRYLO3aSTKbyajD5SP4CROcVIbAf4WffiYfSbcSzeVegLXnvyRfX6MARRTepUvydG9JlO69%2B4A1weo35EJMfR3zAv%2BZhQhfkx0x3uiUO7jlPflMhqQTbuiYpYeulbNrmbwe1Y2Sd5OIQHYmc130zHnRE%2FdEL3kseWPJa9GZ36Lnnoue%2Bi46817YrRMmZrdmHghuKOpYcp5qWdJO0U5aZHqY6VrSZNKmwpMlGrQJ7bJTGdlySOpE0eZXqmQ7KOvnJT9xoxs5B1LFm51M3BJ2MlXBe85SMqZnloVRVFlLDzP%2BFhvLUpdex4lnhrEEUuN3CzWj7BYqMlv6LJg5Wxa5hXlr%2B1EMfp%2FGiE1dZ5GpWqt32DyOa0on2KBTsFOH64GYIgPx%2BzzYrufYos6jzZzYxWbTshNczy4waJbToxXR6qYpyI%2FuztU8vyiiWCYFlQ3EFw62F6d23O27mpfmYQps%2BNXFvLqYVxezxcijVF79HIeLqb%2BZDXUnmLem0f%2BxuYqimvrtuYpv1U9U5fJK2vB%2BIktWOns%2FURCKF1443Ead2nEXgPRHQHfoUB%2BBrIgJnDvsSTxR589OVtHIbRzsKyLyH63pTp93Af%2B9n4irkqy60cy%2Bihf58ylu5IjNm1UxbyorsDBoBEUZApnHI6zxfo7h9tvUjltgqvbOeZpYKw4ZXKRjvgZRA5PW0F0cmaXTy2UmsOfLWzpZs0Sg6s7YnV8GYC3CDkNxXEERNm5xUOSTN0nW0Hy0VMjBRdgiQxqDLRp2n2l%2FwGk63dLGNd3S9k%2B3rjbsBBtWieqbgkoOvduwN5OYewIMG0%2FWWq98ehoM%2Bcnaw3adGq9%2FfUzNlsRbLrAM4RIELpmf0fh99YIWw%2FlvyPZZ6hhs3yCbtk4AT9PNV8Ptq68ddw827GEFggAF52Sq7MomEJu9v6OYn6T1aacGic7vpWXnhdkMSZ2asqZYevK3XH5AlVR1qhn56UpaxJ7CbOLbsD7IX7NyG6vCz%2FbKN9bqEAFoc9v0rpRZCAoWMIMdyaDJEmiEqCytdPP3qIQ4k5wAcidqMwPXcyD%2FJRrozJXBgVtwg15DTNu3ZmT1imQqtsCp7d%2FInkcefi9apgb%2BslyB%2F6v0iqnndSX1SsfVSv9d6xV%2Be8wYk%2Bx6ymTQDaOagJxr%2BmJVQUGFqM4MvPmmdnjuZcNhN7n1ihjHeRCKahc9CLY81H5pVzEV%2BHeh3%2B2yt%2BWAxI5u4MLzBXaWs5zPIUbcfz98eXPGs1LbM9eLPRnPWgkVb7ZIwwGJl0MU6DzyYBiCeQCfgAum0WrTiA0DqtguOKnoU7k8Z1IVSxDe080p26PRi1rV3tjr9kRrTeIL9bb16Gl0VjjQvIu8ZZDpM4e%2BcjJ%2FERibUTh0NqO63pJMNdK9FSQ8B2j4DmZTjx%2Fb5PWWMZ2DyA3UYhTP%2F8YKvGOtOFQZe8uuvkMImzxBIYG82EophbnDKirnl5ZZi8DDpQTGVbdS432PQmHYXVpLfBzmqr3yyQqHFpMlKxddflOIls7KbujDbKEYW7p%2FbRb%2FQVM4too2fG1yzKSkvEaMXFqJw6d%2FaYCNvql558BNjLITia0L6OcIhk9eslglB2P25lXL4up62YKtf%2F3X1Di%2F7Ra1ODi8u31cL2vWB1mD74HO7b%2F%2B9zQ686sLb7MOSVXNKJJAzbRUimSSpiEVwj95ApJ6938%3D"></iframe>
 
 
-La ejecución del anterior flujo de trabajo se realiza usando R. Para ello iremos ejecutando secuencialmente las líneas del siguiente bloque de código. También puedes descargar el código [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/geoinfo/shannon_sierra_nevada.R.zip).:
+La ejecución del anterior flujo de trabajo se realiza usando R. Para ello iremos ejecutando secuencialmente las líneas del siguiente bloque de código. También puedes descargar el código [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/geoinfo/shannon_sierra_nevada.R.zip).:
 
 ```R
 # Este script genera un mapa del índice de Shannon en cuadrículas de 250x250 m a partir de los datos de presencias de especies existentes en GBIF.
@@ -197,23 +172,49 @@ st_write(grid_250m_sf, "Shannon_250_sierra_nevada.shp", append=FALSE)
 
 
 
-## Identificación de patrones espaciales de la diversidad en Sierra Nevada y en Andalucía
+## 4. Del mapa al patrón espacial y a sus causas
+
+
+
+Un mapa de diversidad sirve de poco si nos limitamos a mirarlo. Para sacarle partido hay que ir un paso más allá y hacer dos cosas. La primera es reconocer los patrones espaciales, es decir, las regularidades en la forma en que la diversidad cambia de un lugar a otro: gradientes, manchas, discontinuidades o zonas que se parecen entre sí. La segunda es formular hipótesis sobre las causas de esos patrones. Para eso usaremos lo que vimos en la sección 2 sobre los factores que controlan la diversidad: el clima, el relieve, la estabilidad del ambiente a lo largo del tiempo, el estado sucesional de las comunidades o la acción humana. Haremos este ejercicio a tres escalas cada vez mayores. Empezaremos por una montaña, Sierra Nevada (4.1). Seguiremos con una región, Andalucía, y con un caso concreto en su sureste (4.2). Terminaremos con un gradiente que va desde Alaska hasta casi el ecuador (4.3). En cada caso nos preguntaremos qué patrón vemos, a qué puede deberse y cómo cambiaría si cambiaran las fuerzas que lo producen. Así veremos que algunos patrones se repiten a escalas muy distintas, aunque los procesos que los explican no siempre sean los mismos.
+
+
+
+### 4.1 Identificación de patrones espaciales de la diversidad en Sierra Nevada
 
 El resultado de la sección anterior es un mapa que muestra la distribución de la diversidad en Sierra Nevada. Representémoslo en QGIS tal y como se observa en la siguiente imagen. ¿qué patrones espaciales podemos identificar?, ¿cómo se explican estos patrones espaciales?
 
 
 
-![Sierra_nevada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_Snevada_250.png)
+![Sierra_nevada](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/heads/main/images/shannon_Snevada_250.png)
 
 ¿En qué se diferencia esta imagen a la anterior?
 
 
 
-![Sierra_nevada_lowpass](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_Snevada_250_lowpass.png)
+![Sierra_nevada_lowpass](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/heads/main/images/shannon_Snevada_250_lowpass.png)
 
-También podemos generar un mapa parecido de toda Andalucía. Al utilizar millones de puntos de GBIF, se tardan varias horas en ejecutar el script anterior. Así que no lo haremos en clase. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/geoinfo/biodiv_250_andalucia.zip) puedes descargar un mapa del índice de Shannon de todas las cuadrículas de 250m de Andalucía. Dicho mapa tiene el siguiente aspecto:
 
-![Shannon_250_andalucia](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_andalucia_250.png)
+
+¿Cómo sería este patrón en una montaña situada al norte de Sierra Nevada? ¿Y en una situada al sur?
+
+
+
+
+
+¿Qué pasaría si, por alguna razón misteriosa, cambiara el clima? ¿Cómo afectaría eso al patrón observado?
+
+
+
+
+
+
+### 4.2 Identificación de patrones espaciales de la diversidad en Andalucía
+
+
+También podemos generar un mapa parecido de toda Andalucía. Al utilizar millones de puntos de GBIF, se tardan varias horas en ejecutar el script anterior. Así que no lo haremos en clase. [Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/geoinfo/biodiv_250_andalucia.zip) puedes descargar un mapa del índice de Shannon de todas las cuadrículas de 250m de Andalucía. Dicho mapa tiene el siguiente aspecto:
+
+![Shannon_250_andalucia](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/heads/main/images/shannon_andalucia_250.png)
 
 ¿Qué patrones espaciales podemos identificar en la imagen anterior? ¿A qué pueden deberse esos patrones?
 
@@ -221,25 +222,25 @@ También podemos generar un mapa parecido de toda Andalucía. Al utilizar millon
 
 Si hacemos un poco de zoom en el sureste de Andalucía, observamos algo así:
 
-![Shannon_250_sureste](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_sureste_250_label.png)
+![Shannon_250_sureste](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/heads/main/images/shannon_sureste_250_label.png)
 
 ¿A qué se debe el patrón observado en la diversidad?
 
 
 
-## Patrones espaciales de diversidad a escala global
+### 4.3 Identificación de patrones espaciales de diversidad a escala global
 
 ¿Podemos ver patrones de diversidad a escala mayor que la analizada anteriormente?
 
-En [esta](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/tags/2025_2026/geoinfo/zonas_gradiente_latitudinal.zip) capa vectorial se muestran varias zonas localizadas en la parte occidental del continente americano. Desde Alaska hasta casi el Ecuador. En cada una de esas zonas se ha generado un mapa de diversidad parecido al que hemos creado para Sierra Nevada. La diferencia es que se ha calculado el promedio de la diversidad de todas las cuadrículas de 250m de cada zona. Eso explica por qué cada polígono tiene un único valor del índice Shannon. Descarga la capa y representála en un SIG. Puedes ponerle de fondo una imagen de satélite usando un plugin llamado *quickmapservices*. El resultado debería de ser parecido a esta imagen:
+En [esta](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/raw/refs/heads/main/geoinfo/zonas_gradiente_latitudinal.zip) capa vectorial se muestran varias zonas localizadas en la parte occidental del continente americano. Desde Alaska hasta casi el Ecuador. En cada una de esas zonas se ha generado un mapa de diversidad parecido al que hemos creado para Sierra Nevada. La diferencia es que se ha calculado el promedio de la diversidad de todas las cuadrículas de 250m de cada zona. Eso explica por qué cada polígono tiene un único valor del índice Shannon. Descarga la capa y representála en un SIG. Puedes ponerle de fondo una imagen de satélite usando un plugin llamado *quickmapservices*. El resultado debería de ser parecido a esta imagen:
 
-![gradiente_lat](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/gradiente_latitud.png)
+![gradiente_lat](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/heads/main/images/gradiente_latitud.png)
 
 ¿Se puede identificar algún patrón espacial? En caso afirmativo, ¿a qué se debe? ¿en qué se parece este patrón a alguno de los observados anteriormente?
 
 
 
-## Relación entre la diversidad y la escala espacial
+## 5. Relación entre la diversidad y la escala espacial
 
 Hasta aquí hemos trabajado con un concepto idealizado de comunidad que tiene 250 m de lado. Sin embargo, en la introducción hemos explicado claramente que la delimitación de la comunidad tiene una fuerte componente arbitraria. ¿qué pasaría si calculáramos el índice de Shannon en Andalucía usando un tamaño de cuadrícula creciente?. Es decir, ¿en qué se parece el mapa de Shannon de 250 m a otro generado, por ejemplo, con una cuadrícula de 1000 m de lado?
 
@@ -247,39 +248,33 @@ Las siguientes tres imágenes muestran el resultado de este experimento con tama
 
 
 
-![Shannon_andalucia_500](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_andalucia_500.png)
+![Shannon_andalucia_500](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/heads/main/images/shannon_andalucia_500.png)
 
-![Shannon_andalucia_1000](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_andalucia_1000.png)
+![Shannon_andalucia_1000](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/heads/main/images/shannon_andalucia_1000.png)
 
-![Shannon_andalucia_10000](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_andalucia_10000.png)
+![Shannon_andalucia_10000](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/heads/main/images/shannon_andalucia_10000.png)
 
 ¿En qué se diferencian estas imágenes? ¿Han cambiado los patrones espaciales? ¿Qué quiere decir esto?
 
 Ahora daremos un nuevo paso en este proceso de cambiar la escala de cálculo del índice de Shannon. Calculemos ahora el mismo índice considerando que los espacios naturales protegidos de Andalucía son comunidades. Es decir, calculemos el índice de Shannon de los espacios protegidos. La siguiente imagen muestra el resultado de esto:
 
-![Shannon_natura](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_natura.png)
+![Shannon_natura](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/heads/main/images/shannon_natura.png)
 
 Comparemos este mapa con el primero que hemos hecho: el mapa del índice de Shannon a 250m:
 
-![Shannon_250_andalucia](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/shannon_andalucia_250.png)
+![Shannon_250_andalucia](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/heads/main/images/shannon_andalucia_250.png)
 
 ¿Qué diferencias observamos entre ambos mapas?
 
 Podemos comparar la diversidad promedio de las comunidades de cada espacio protegido con el índice de Shannon que recibe dicho espacio si lo calculamos a escala de paisaje. Los resultados se pueden ver en la siguiente tabla:
 
-![tabla_diversidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/tags/2025_2026/images/tabla_diversidades.jpg)
+![tabla_diversidades](https://raw.githubusercontent.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/refs/heads/main/images/tabla_diversidades.jpg)
 
 ¿¿¿¿ Qué está pasando aquí ???
 
 Observamos cómo los espacios protegidos que tienen valores altos de diversidad a escala de paisaje (shannon calculado con el límite del espacio protegido), tienen valores promedios bajos de diversidad a escala de 250 m. Y viceversa. ¿Qué clase de brujería es esta?
 
 
-
-MAUP: modifiable area unit problem
-
-
-
-esquema pizarra con las dos zonas de trabajo: heterogenea y homogénea
 
 
 
@@ -291,23 +286,6 @@ Quizás esta presentación nos ayude a entender un poco esto:
 
 <iframe src="https://prezi.com/p/embed/hlzq3rFR88R4Vs84CVly/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="415" width="738"></iframe>
 
-las dos diversidades anteriores nos dan pie a estudiar cómo cambia la diversiadd en el paisaje
-
-
-
-diversidad beta como ejemplo de variable regionalizada
-
-
-
-quíe otras regionalizadas hay?
-
-
-
-pendiente...
-
-
-
-flujo y acúmulo de agua. esto nos da pie a estudiar el concepto de anisotropía.
 
 
 
@@ -315,7 +293,8 @@ flujo y acúmulo de agua. esto nos da pie a estudiar el concepto de anisotropía
 
 
 
-## Cómo generar un mapa de diversidad beta
+
+## 6. Cómo generar un mapa de diversidad del tipo que nos falta...
 
 
 
@@ -326,7 +305,7 @@ flujo y acúmulo de agua. esto nos da pie a estudiar el concepto de anisotropía
 
 ****
 
-[Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/archive/refs/tags/2025_2026.zip) puedes descargar un archivo .zip que contiene este guión en formato html y todo el material que incluye.
+[Aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/archive/refs/tags/2026_2027.zip) puedes descargar un archivo .zip que contiene este guión en formato html y todo el material que incluye.
 
 ****
 Haz click [aquí](https://github.com/aprendiendo-cosas/P_shannon_SIG_II_Geoforest/releases) para ver cómo ha cambiado este guión en los distintos cursos académicos.
